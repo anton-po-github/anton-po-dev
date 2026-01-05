@@ -1,1 +1,176 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'tailwindcss';
+
+/* === GLOBAL RESET & CORE === */
+:root {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  background-color: #050510; /* Deep space black */
+  color: #e2e8f0;
+  overflow-x: hidden; /* No horizontal scroll */
+}
+
+body {
+  margin: 0;
+}
+
+/* --- CYBERPUNK BUTTON ANIMATION --- */
+.cyber-button {
+  @apply relative overflow-hidden bg-gradient-to-r from-[#00FF94] via-[#00C2FF] to-[#BD00FF] text-white font-bold py-4 px-10 rounded-md shadow-[0_0_20px_rgba(0,255,148,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,255,148,0.6)];
+}
+
+.cyber-button::after {
+  content: '';
+  @apply absolute top-0 -left-[150%] w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-[30deg] transition-all duration-1000 ease-in-out;
+}
+
+.cyber-button:hover::after {
+  @apply left-[150%];
+}
+
+/* === BACKGROUND ANIMATION ENGINE (The "Living" Background) === */
+/* This container sits behind everything fixed to the viewport */
+.animated-background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* BEHIND content */
+  pointer-events: none;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #050510 100%);
+}
+
+/* 1. Moving Cyber Grid Layer */
+.bg-grid-moving {
+  position: absolute;
+  inset: -50%; /* Make it larger than screen to allow movement */
+  width: 200%;
+  height: 200%;
+  background-image: linear-gradient(rgba(0, 194, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 194, 255, 0.07) 1px, transparent 1px);
+  background-size: 60px 60px;
+  /* Perspective transform to make it look like a floor */
+  transform: perspective(1000px) rotateX(60deg);
+  animation: gridFinishLine 20s linear infinite;
+}
+
+@keyframes gridFinishLine {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 300px;
+  } /* Moves the grid towards user */
+}
+
+/* 2. Shooting Data Streams (Horizontal Lines) */
+.data-stream-container {
+  position: absolute;
+  inset: 0;
+  transform: skewY(-5deg); /* Slight angle for dynamism */
+}
+
+.data-stream {
+  position: absolute;
+  height: 2px;
+  width: 100px;
+  background: linear-gradient(90deg, transparent, #00ff94, #00c2ff, transparent);
+  opacity: 0;
+  animation: shootAcross 5s linear infinite;
+}
+
+/* Randomize placement and timing */
+.ds-1 {
+  top: 20%;
+  left: -10%;
+  animation-delay: 0s;
+  animation-duration: 7s;
+}
+.ds-2 {
+  top: 40%;
+  left: -20%;
+  animation-delay: 2s;
+  animation-duration: 5s;
+  width: 150px;
+  background: linear-gradient(90deg, transparent, #bd00ff, transparent);
+}
+.ds-3 {
+  top: 60%;
+  left: -10%;
+  animation-delay: 4s;
+  animation-duration: 6s;
+}
+.ds-4 {
+  top: 80%;
+  left: -30%;
+  animation-delay: 1s;
+  animation-duration: 8s;
+  width: 200px;
+}
+
+@keyframes shootAcross {
+  0% {
+    transform: translateX(0) scaleX(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120vw) scaleX(1);
+    opacity: 0;
+  }
+}
+
+/* 3. Rotating Pulsing Glows (Nebulas) */
+.rotating-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.15;
+  animation: rotateGlow 60s linear infinite;
+}
+.rg-1 {
+  top: -20%;
+  left: -20%;
+  width: 600px;
+  height: 600px;
+  animation-direction: normal;
+}
+.rg-2 {
+  bottom: -20%;
+  right: -20%;
+  width: 700px;
+  height: 700px;
+  animation-direction: reverse;
+}
+
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+    opacity: 0.25;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050510;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #00ff94, #00c2ff);
+  border-radius: 4px;
+}

@@ -1,0 +1,212 @@
+<div class="animated-background-container">
+  <div class="bg-grid-moving"></div>
+
+  <div class="rotating-glow rg-1 bg-[#00C2FF]"></div>
+  <div class="rotating-glow rg-2 bg-[#BD00FF]"></div>
+
+  <div class="data-stream-container">
+    <div class="data-stream ds-1"></div>
+    <div class="data-stream ds-2"></div>
+    <div class="data-stream ds-3"></div>
+    <div class="data-stream ds-4"></div>
+  </div>
+</div>
+
+<main
+  class="relative z-10 min-h-screen w-full text-[#E2E8F0] selection:bg-[#00C2FF] selection:text-black"
+>
+  <section
+    class="min-h-[90vh] container mx-auto flex flex-col md:flex-row items-center justify-center gap-30 py-20 px-4"
+  >
+    <div class="relative group shrink-0 z-20">
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[130%] border border-dashed border-[#00C2FF]/30 rounded-full animate-[spin_30s_linear_infinite]"
+      ></div>
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] border border-dotted border-[#BD00FF]/30 rounded-full animate-[spin_45s_linear_reverse_infinite]"
+      ></div>
+
+      <div
+        class="absolute -inset-2 bg-gradient-to-r from-[#00FF94] to-[#BD00FF] rounded-full blur-2xl opacity-30 group-hover:opacity-60 transition-opacity duration-500"
+      ></div>
+
+      <img
+        ngSrc="assets/anton-po.png"
+        alt="Anton.Po"
+        width="350"
+        height="380"
+        priority
+        class="relative mr-5 object-cover"
+      />
+    </div>
+
+    <div class="text-center md:text-left z-20">
+      <h1
+        class="text-6xl md:text-8xl font-extrabold tracking-tighter text-white mb-4 drop-shadow-[0_0_15px_rgba(0,255,148,0.3)]"
+      >
+        Anton<span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] to-[#00FF94]"
+          >.Po</span
+        >
+      </h1>
+
+      <h2
+        class="text-xl md:text-2xl font-mono text-[#00C2FF] mb-6 tracking-[0.15em] uppercase font-bold"
+      >
+        Senior Full Stack .NET & Angular Developer
+      </h2>
+
+      <p class="text-lg text-slate-300 max-w-xl leading-relaxed mb-10">
+        Building
+        <span class="text-white font-bold border-b border-[#00FF94]">High-Performance</span> Web
+        Solutions.
+      </p>
+
+      <a (click)="scrollToHire()" class="cyber-button cursor-pointer inline-block">
+        Hire Me on Upwork
+      </a>
+    </div>
+  </section>
+
+  @defer (on viewport) {
+
+  <section class="py-24 container mx-auto px-4 relative">
+    <div class="flex items-center justify-center mb-16 relative">
+      <div class="h-[2px] w-32 bg-gradient-to-r from-transparent to-[#00C2FF]"></div>
+      <h3 class="text-3xl font-bold text-white mx-6 tracking-wide">Tech Stack</h3>
+      <div class="h-[2px] w-32 bg-gradient-to-l from-transparent to-[#00C2FF]"></div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      @for (item of techStack(); track item.name) {
+      <div
+        class="relative group bg-[#0D1126]/80 backdrop-blur-md p-[2px] rounded-xl overflow-hidden"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-[#00C2FF]/50 via-transparent to-[#BD00FF]/50 opacity-50 group-hover:opacity-100 transition-opacity duration-500"
+        ></div>
+
+        <div
+          class="relative h-full bg-[#050510]/90 rounded-xl p-8 flex flex-col items-center text-center z-10 hover:bg-[#0D1126] transition-colors"
+        >
+          <div
+            class="w-20 h-20 mb-6 flex items-center justify-center bg-[#00C2FF]/10 rounded-full group-hover:scale-110 group-hover:bg-[#00C2FF]/20 group-hover:shadow-[0_0_20px_rgba(0,194,255,0.4)] transition-all duration-300"
+          >
+            <img [src]="'assets/icons/' + item.iconName" [alt]="item.name" class="w-12 h-12" />
+          </div>
+          <h4 class="text-xl font-bold text-white tracking-wide mb-2">{{ item.name }}</h4>
+        </div>
+      </div>
+      }
+    </div>
+  </section>
+
+  <section class="py-24 relative">
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="flex items-center justify-center mb-16 relative">
+        <div class="h-[2px] w-32 bg-gradient-to-r from-transparent to-[#BD00FF]"></div>
+        <h3 class="text-3xl font-bold text-white mx-6 tracking-wide">Experience & Impact</h3>
+        <div class="h-[2px] w-32 bg-gradient-to-l from-transparent to-[#BD00FF]"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        @for (job of experience(); track job.title) {
+        <div
+          class="relative p-8 bg-[#0D1126]/90 backdrop-blur-md rounded-lg border-x-2 border-[#BD00FF]/30 group hover:border-[#BD00FF] transition-all duration-500 overflow-hidden"
+        >
+          <div
+            class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#BD00FF] to-transparent opacity-50"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#BD00FF] to-transparent opacity-50"
+          ></div>
+
+          <h4 class="text-2xl font-bold text-white mb-4">{{ job.title }}</h4>
+          <p class="text-slate-400 mb-8 font-light leading-relaxed">{{ job.description }}</p>
+
+          <div class="mb-4">
+            <span
+              class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-[#00FF94]"
+              >{{ job.result }}</span
+            >
+          </div>
+
+          <div class="flex items-center text-sm font-mono text-[#00C2FF]">
+            {{ job.tech }}
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 text-center px-4 relative overflow-hidden">
+    <div
+      class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#00C2FF] to-transparent shadow-[0_0_10px_#00C2FF]"
+    ></div>
+
+    <div class="max-w-4xl mx-auto relative z-10 mt-10">
+      <div
+        class="bg-[#050510]/80 rounded-2xl p-12 backdrop-blur-xl border-y border-[#00C2FF]/20 relative"
+      >
+        <div
+          class="inline-block p-5 rounded-full bg-gradient-to-br from-[#00C2FF]/20 to-[#BD00FF]/20 mb-8 shadow-[0_0_30px_rgba(0,194,255,0.2)]"
+        >
+          <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+            />
+          </svg>
+        </div>
+
+        <h3 class="text-4xl font-bold text-white mb-6">Open Source & GitHub</h3>
+        <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+          This website is <span class="text-[#00FF94] font-bold">open source</span>. Check the code
+          to see my current coding standards.
+        </p>
+
+        <a
+          href="https://github.com/yourusername"
+          target="_blank"
+          class="cyber-button cursor-pointer inline-flex items-center"
+        >
+          View on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer
+    class="py-12 border-t border-[#00C2FF]/20 text-center bg-[#050510]/90 backdrop-blur-xl relative overflow-hidden"
+  >
+    <div
+      class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-20 bg-[#00FF94] blur-[100px] opacity-20 pointer-events-none"
+    ></div>
+
+    <div
+      class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6"
+      id="hire-section"
+    >
+      <p class="text-slate-400 font-mono text-sm tracking-widest">© {{ currentYear() }} Anton.Po</p>
+      <a href="https://upwork.com" target="_blank" class="cyber-button py-3 px-8 text-sm">
+        Hire Me on Upwork
+      </a>
+    </div>
+  </footer>
+
+  } @placeholder (minimum 1000ms) {
+  <div
+    class="min-h-screen bg-[#050510] flex flex-col items-center justify-center relative overflow-hidden"
+  >
+    <div class="absolute inset-0 bg-grid-moving opacity-20"></div>
+    <div class="relative z-10 flex flex-col items-center">
+      <div
+        class="w-24 h-24 border-4 border-[#00C2FF]/20 border-t-[#00FF94] rounded-full animate-spin mb-8"
+      ></div>
+      <p class="font-mono text-[#00FF94] tracking-[0.3em] animate-pulse">
+        INITIALIZING CORE SYSTEMS...
+      </p>
+    </div>
+  </div>
+  }
+</main>
