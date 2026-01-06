@@ -1,11 +1,13 @@
-import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy, OnInit, inject } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
 
 interface TechItem {
   name: string;
   iconName: string;
   group: string;
 }
+
 interface ExperienceItem {
   title: string;
   description: string;
@@ -18,11 +20,14 @@ interface ExperienceItem {
   standalone: true,
   imports: [CommonModule, NgOptimizedImage],
   templateUrl: './app.component.html',
-  // No inline styles here, we use global SCSS for reliable background animations
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  // --- Services for SEO ---
+  private meta = inject(Meta);
+  private titleService = inject(Title);
+
   // --- Signals State ---
   readonly techStack = signal<TechItem[]>([
     { name: 'Angular', iconName: 'ng.svg', group: 'Frontend' },
@@ -58,6 +63,34 @@ export class AppComponent {
   ]);
 
   readonly currentYear = signal(new Date().getFullYear());
+
+  ngOnInit(): void {
+    // --- SEO Configuration ---
+    // Sets the tab title in the browser
+    this.titleService.setTitle('Anton.Po | Senior Full Stack .NET & Angular Developer');
+
+    // Sets meta tags for Google, Twitter, LinkedIn previews
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'Senior Full Stack Developer specialized in Angular v21, .NET 10, and Azure. Architecting high-performance web solutions.',
+      },
+      {
+        name: 'keywords',
+        content: 'Angular, .NET, Azure, Full Stack Developer, TypeScript, C#, Software Architect',
+      },
+      { name: 'author', content: 'Anton.Po' },
+      { name: 'robots', content: 'index, follow' }, // Tells Google to index this page
+      { property: 'og:title', content: 'Anton.Po - High-Performance Web Solutions' },
+      {
+        property: 'og:description',
+        content: 'Building the next web with Angular v21 and .NET 10.',
+      },
+      { property: 'og:image', content: 'assets/anton-po.png' }, // Ensure this path is absolute in production
+      { property: 'og:type', content: 'website' },
+    ]);
+  }
 
   scrollToHire(): void {
     document.getElementById('hire-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });

@@ -3,13 +3,14 @@
 :root {
   background-color: #050510;
   color: #e2e8f0;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+
+  font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif;
 }
 
 body {
   margin: 0;
-  overflow-x: hidden; /* Важно, чтобы анимация не делала скролл вбок */
+  overflow-x: hidden;
 }
 
 /* === 1. CYBER BACKGROUND ENGINE === */
@@ -17,22 +18,23 @@ body {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: radial-gradient(circle at 50% 50%, #1a1f35 0%, #050510 70%);
+  /* More complex gradient for depth */
+  background: radial-gradient(circle at 50% 50%, #1a1f35 0%, #090a16 60%, #000000 100%);
   overflow: hidden;
 }
 
-/* Сетка (Grid) - оставляем как есть, она зашла */
+/* Floor Grid */
 .tech-grid {
   position: absolute;
   inset: -50%;
   width: 200%;
   height: 200%;
-  background-image: linear-gradient(rgba(0, 194, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 194, 255, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
-  transform: perspective(1000px) rotateX(60deg) translateY(-100px) translateZ(-200px);
-  /* Добавляем медленное движение сетки, чтобы оживить фон */
-  animation: grid-cruise 60s linear infinite;
+  background-image: linear-gradient(rgba(0, 194, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 194, 255, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  transform: perspective(800px) rotateX(60deg) translateY(-150px) translateZ(-300px);
+  animation: grid-cruise 40s linear infinite;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%);
 }
 
 @keyframes grid-cruise {
@@ -44,21 +46,21 @@ body {
   }
 }
 
-/* Сканер (Волна) - оставляем, она зашла */
+/* Vertical Scanner Wave */
 .energy-scanner {
   position: absolute;
   top: -100%;
   left: 0;
   width: 100%;
-  height: 40%;
+  height: 30%;
   background: linear-gradient(
     to bottom,
     transparent,
-    rgba(0, 194, 255, 0.1) 50%,
-    rgba(189, 0, 255, 0.05) 90%,
+    rgba(0, 194, 255, 0.15) 50%,
+    rgba(189, 0, 255, 0.1) 90%,
     transparent
   );
-  animation: scan-vertical 7s ease-in-out infinite;
+  animation: scan-vertical 8s ease-in-out infinite;
   pointer-events: none;
   mix-blend-mode: screen;
 }
@@ -80,45 +82,75 @@ body {
   }
 }
 
-/* НОВОЕ: Digital Stars (Вместо серых шариков) */
-/* Это маленькие мерцающие точки, создающие глубину космоса */
-.digital-star {
+/* --- NEW: Horizontal Data Streams (Shooting Lines) --- */
+.data-stream {
   position: absolute;
-  background: white;
-  width: 2px;
-  height: 2px;
-  border-radius: 50%; /* Круглые, но маленькие */
+  height: 1px;
+  width: 150px;
+  background: linear-gradient(90deg, transparent, #00c2ff, transparent);
   opacity: 0;
-  box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
-  animation: star-twinkle var(--duration) ease-in-out infinite;
+  animation: data-shoot 5s linear infinite;
   animation-delay: var(--delay);
+  top: var(--top);
+  left: -200px;
 }
 
-@keyframes star-twinkle {
+@keyframes data-shoot {
   0% {
+    transform: translateX(0);
     opacity: 0;
-    transform: scale(0.5);
   }
-  50% {
-    opacity: var(--max-opacity);
-    transform: scale(1.2);
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
   }
   100% {
+    transform: translateX(120vw);
     opacity: 0;
-    transform: scale(0.5);
+  }
+}
+
+/* --- NEW: Cyber Particles (Floating Squares) --- */
+.cyber-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: rgba(189, 0, 255, 0.3);
+  box-shadow: 0 0 5px rgba(189, 0, 255, 0.5);
+  animation: float-particle var(--duration) ease-in-out infinite;
+  animation-delay: var(--delay);
+  top: var(--top);
+  left: var(--left);
+}
+
+@keyframes float-particle {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: var(--opacity);
+  }
+  80% {
+    opacity: var(--opacity);
+  }
+  100% {
+    transform: translateY(-100px) scale(0);
+    opacity: 0;
   }
 }
 
 /* === 2. AVATAR STYLES === */
 .avatar-mask {
-  /* Плавное исчезновение снизу */
-  mask-image: linear-gradient(to bottom, black 60%, transparent 95%);
-  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 95%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
 }
 
 /* === 3. UTILS === */
 .text-glow {
-  text-shadow: 0 0 20px rgba(0, 194, 255, 0.5);
+  text-shadow: 0 0 25px rgba(0, 194, 255, 0.6);
 }
 
 ::-webkit-scrollbar {
