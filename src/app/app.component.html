@@ -1,138 +1,191 @@
-<div class="animated-background-container">
-  <div class="bg-grid-moving"></div>
+<div class="cyber-wrapper">
+  <div class="tech-grid"></div>
+  <div class="energy-scanner"></div>
+  <div class="particle p-1"></div>
+  <div class="particle p-2"></div>
+  <div class="particle p-3"></div>
 
-  <div class="rotating-glow rg-1 bg-[#00C2FF]"></div>
-  <div class="rotating-glow rg-2 bg-[#BD00FF]"></div>
-
-  <div class="data-stream-container">
-    <div class="data-stream ds-1"></div>
-    <div class="data-stream ds-2"></div>
-    <div class="data-stream ds-3"></div>
-    <div class="data-stream ds-4"></div>
-  </div>
+  <div
+    class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050510_90%)]"
+  ></div>
 </div>
 
-<main
-  class="relative z-10 min-h-screen w-full text-[#E2E8F0] selection:bg-[#00C2FF] selection:text-black"
->
-  <section
-    class="min-h-[90vh] container mx-auto flex flex-col md:flex-row items-center justify-center gap-30 py-20 px-4"
-  >
-    <div class="relative group shrink-0 z-20">
-      <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[130%] border border-dashed border-[#00C2FF]/30 rounded-full animate-[spin_30s_linear_infinite]"
-      ></div>
-      <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] border border-dotted border-[#BD00FF]/30 rounded-full animate-[spin_45s_linear_reverse_infinite]"
-      ></div>
+<main class="relative z-10 w-full min-h-screen flex flex-col">
+  <section class="min-h-[95vh] flex flex-col justify-center items-center relative px-4 pt-10">
+    <div
+      class="absolute top-1/3 w-full h-px bg-gradient-to-r from-transparent via-[#00C2FF]/20 to-transparent"
+    ></div>
 
-      <div
-        class="absolute -inset-2 bg-gradient-to-r from-[#00FF94] to-[#BD00FF] rounded-full blur-2xl opacity-30 group-hover:opacity-60 transition-opacity duration-500"
-      ></div>
+    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="text-center lg:text-left order-2 lg:order-2">
+        <div
+          class="inline-block px-3 py-1 mb-4 border border-[#00C2FF]/30 rounded-full bg-[#00C2FF]/5 backdrop-blur-sm"
+        >
+          <span class="text-[#00C2FF] font-mono text-xs tracking-widest uppercase animate-pulse"
+            >● System Online</span
+          >
+        </div>
 
-      <img
-        ngSrc="assets/anton-po.png"
-        alt="Anton.Po"
-        width="350"
-        height="380"
-        priority
-        class="relative mr-5 object-cover"
-      />
+        <h1
+          class="text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight drop-shadow-xl"
+        >
+          Building <br />
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] via-white to-[#BD00FF] text-glow"
+          >
+            Digital Future
+          </span>
+        </h1>
+
+        <h2 class="text-xl text-[#94A3B8] font-mono mb-8 h-8">
+          Senior Full Stack <span class="text-white">.NET & Angular</span> Architect
+        </h2>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a
+            (click)="scrollToHire()"
+            class="cursor-pointer relative group px-8 py-4 bg-[#00C2FF] text-[#050510] font-bold rounded-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(0,194,255,0.4)]"
+          >
+            <span class="relative z-10">Hire Me on Upwork</span>
+            <div
+              class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+            ></div>
+          </a>
+
+          <a
+            href="https://github.com/yourusername"
+            target="_blank"
+            class="px-8 py-4 border border-[#94A3B8]/30 text-white rounded-lg hover:bg-white/5 transition-colors flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="relative order-1 lg:order-2 flex justify-center group">
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-tr from-[#00C2FF] to-[#BD00FF] rounded-full blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity duration-700"
+        ></div>
+
+        <div
+          class="absolute inset-0 border border-[#00C2FF]/20 rounded-full animate-[spin_20s_linear_infinite]"
+        ></div>
+        <div
+          class="absolute inset-4 border border-dashed border-[#BD00FF]/20 rounded-full animate-[spin_30s_linear_reverse_infinite]"
+        ></div>
+
+        <div class="relative w-[300px] h-[300px] lg:w-[400px] lg:h-[400px]">
+          <img
+            ngSrc="assets/anton-po.png"
+            alt="Anton Po"
+            fill
+            priority
+            class="object-cover avatar-mask drop-shadow-2xl"
+          />
+        </div>
+
+        <div
+          class="absolute -bottom-6 bg-[#050510]/80 backdrop-blur-md border border-[#00C2FF]/30 px-6 py-2 rounded-lg shadow-[0_0_15px_rgba(0,194,255,0.2)]"
+        >
+          <span class="text-white font-bold text-xl tracking-wider">Anton.Po</span>
+        </div>
+      </div>
     </div>
 
-    <div class="text-center md:text-left z-20">
-      <h1
-        class="text-6xl md:text-8xl font-extrabold tracking-tighter text-white mb-4 drop-shadow-[0_0_15px_rgba(0,255,148,0.3)]"
-      >
-        Anton<span
-          class="text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] to-[#00FF94]"
-          >.Po</span
-        >
-      </h1>
-
-      <h2
-        class="text-xl md:text-2xl font-mono text-[#00C2FF] mb-6 tracking-[0.15em] uppercase font-bold"
-      >
-        Senior Full Stack .NET & Angular Developer
-      </h2>
-
-      <p class="text-lg text-slate-300 max-w-xl leading-relaxed mb-10">
-        Building
-        <span class="text-white font-bold border-b border-[#00FF94]">High-Performance</span> Web
-        Solutions.
-      </p>
-
-      <a (click)="scrollToHire()" class="cyber-button cursor-pointer inline-block">
-        Hire Me on Upwork
-      </a>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-[#00C2FF]/50">
+      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 14l-7 7m0 0l-7-7m7 7V3"
+        />
+      </svg>
     </div>
   </section>
 
   @defer (on viewport) {
 
-  <section class="py-24 container mx-auto px-4 relative">
-    <div class="flex items-center justify-center mb-16 relative">
-      <div class="h-[2px] w-32 bg-gradient-to-r from-transparent to-[#00C2FF]"></div>
-      <h3 class="text-3xl font-bold text-white mx-6 tracking-wide">Tech Stack</h3>
-      <div class="h-[2px] w-32 bg-gradient-to-l from-transparent to-[#00C2FF]"></div>
+  <section class="py-24 container mx-auto px-4 relative z-10">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="h-[2px] w-12 bg-[#00C2FF]"></div>
+      <h3 class="text-3xl font-bold text-white">Core Technologies</h3>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
       @for (item of techStack(); track item.name) {
       <div
-        class="relative group bg-[#0D1126]/80 backdrop-blur-md p-[2px] rounded-xl overflow-hidden"
+        class="group relative p-6 bg-gradient-to-b from-[#131934] to-[#050510] border border-[#00C2FF]/10 rounded-xl hover:border-[#00C2FF]/50 transition-all duration-300 hover:-translate-y-2"
       >
         <div
-          class="absolute inset-0 bg-gradient-to-br from-[#00C2FF]/50 via-transparent to-[#BD00FF]/50 opacity-50 group-hover:opacity-100 transition-opacity duration-500"
+          class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#00C2FF] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
         ></div>
 
-        <div
-          class="relative h-full bg-[#050510]/90 rounded-xl p-8 flex flex-col items-center text-center z-10 hover:bg-[#0D1126] transition-colors"
-        >
-          <div
-            class="w-20 h-20 mb-6 flex items-center justify-center bg-[#00C2FF]/10 rounded-full group-hover:scale-110 group-hover:bg-[#00C2FF]/20 group-hover:shadow-[0_0_20px_rgba(0,194,255,0.4)] transition-all duration-300"
-          >
-            <img [src]="'assets/icons/' + item.iconName" [alt]="item.name" class="w-12 h-12" />
-          </div>
-          <h4 class="text-xl font-bold text-white tracking-wide mb-2">{{ item.name }}</h4>
+        <div class="flex flex-col items-center">
+          <img
+            [src]="'assets/icons/' + item.iconName"
+            [alt]="item.name"
+            class="w-16 h-16 mb-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_15px_rgba(0,194,255,0.5)] transition-all"
+          />
+          <span class="text-lg font-bold text-slate-200">{{ item.name }}</span>
+          <span class="text-xs text-[#94A3B8] mt-1">{{ item.group }}</span>
         </div>
       </div>
       }
     </div>
   </section>
 
-  <section class="py-24 relative">
+  <section class="py-24 relative overflow-hidden">
+    <div
+      class="absolute right-0 top-1/4 w-[300px] h-[600px] bg-[#BD00FF] blur-[150px] opacity-10 pointer-events-none"
+    ></div>
+
     <div class="container mx-auto px-4 relative z-10">
-      <div class="flex items-center justify-center mb-16 relative">
-        <div class="h-[2px] w-32 bg-gradient-to-r from-transparent to-[#BD00FF]"></div>
-        <h3 class="text-3xl font-bold text-white mx-6 tracking-wide">Experience & Impact</h3>
-        <div class="h-[2px] w-32 bg-gradient-to-l from-transparent to-[#BD00FF]"></div>
+      <div class="flex items-center justify-end gap-4 mb-12">
+        <h3 class="text-3xl font-bold text-white">Impact & Results</h3>
+        <div class="h-[2px] w-12 bg-[#BD00FF]"></div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="space-y-6">
         @for (job of experience(); track job.title) {
         <div
-          class="relative p-8 bg-[#0D1126]/90 backdrop-blur-md rounded-lg border-x-2 border-[#BD00FF]/30 group hover:border-[#BD00FF] transition-all duration-500 overflow-hidden"
+          class="relative p-8 rounded-2xl bg-[#0D1126]/60 backdrop-blur border-l-4 border-[#BD00FF] hover:bg-[#131934] transition-colors group"
         >
           <div
-            class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#BD00FF] to-transparent opacity-50"
-          ></div>
-          <div
-            class="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#BD00FF] to-transparent opacity-50"
+            class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"
           ></div>
 
-          <h4 class="text-2xl font-bold text-white mb-4">{{ job.title }}</h4>
-          <p class="text-slate-400 mb-8 font-light leading-relaxed">{{ job.description }}</p>
+          <div class="relative z-10 grid md:grid-cols-[1fr_auto] gap-6">
+            <div>
+              <h4
+                class="text-2xl font-bold text-white mb-2 group-hover:text-[#BD00FF] transition-colors"
+              >
+                {{ job.title }}
+              </h4>
+              <p class="text-slate-400 leading-relaxed mb-4">{{ job.description }}</p>
+              <div class="flex flex-wrap gap-2">
+                @for(tag of job.tech.split(','); track tag) {
+                <span
+                  class="px-2 py-1 text-xs font-mono bg-[#BD00FF]/10 text-[#BD00FF] rounded border border-[#BD00FF]/20"
+                  >{{ tag.trim() }}</span
+                >
+                }
+              </div>
+            </div>
 
-          <div class="mb-4">
-            <span
-              class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-[#00FF94]"
-              >{{ job.result }}</span
+            <div
+              class="flex flex-col justify-center items-start md:items-end border-t md:border-t-0 md:border-l border-[#ffffff]/10 pt-4 md:pt-0 md:pl-8"
             >
-          </div>
-
-          <div class="flex items-center text-sm font-mono text-[#00C2FF]">
-            {{ job.tech }}
+              <span class="text-xs text-slate-500 uppercase tracking-widest mb-1">Impact</span>
+              <span class="text-xl md:text-2xl font-bold text-[#00FF94] shadow-[#00FF94]">{{
+                job.result
+              }}</span>
+            </div>
           </div>
         </div>
         }
@@ -140,73 +193,45 @@
     </div>
   </section>
 
-  <section class="py-24 text-center px-4 relative overflow-hidden">
-    <div
-      class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#00C2FF] to-transparent shadow-[0_0_10px_#00C2FF]"
-    ></div>
-
-    <div class="max-w-4xl mx-auto relative z-10 mt-10">
-      <div
-        class="bg-[#050510]/80 rounded-2xl p-12 backdrop-blur-xl border-y border-[#00C2FF]/20 relative"
-      >
-        <div
-          class="inline-block p-5 rounded-full bg-gradient-to-br from-[#00C2FF]/20 to-[#BD00FF]/20 mb-8 shadow-[0_0_30px_rgba(0,194,255,0.2)]"
-        >
-          <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-            />
-          </svg>
-        </div>
-
-        <h3 class="text-4xl font-bold text-white mb-6">Open Source & GitHub</h3>
-        <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-          This website is <span class="text-[#00FF94] font-bold">open source</span>. Check the code
-          to see my current coding standards.
-        </p>
-
-        <a
-          href="https://github.com/yourusername"
-          target="_blank"
-          class="cyber-button cursor-pointer inline-flex items-center"
-        >
-          View on GitHub
-        </a>
-      </div>
-    </div>
-  </section>
-
   <footer
-    class="py-12 border-t border-[#00C2FF]/20 text-center bg-[#050510]/90 backdrop-blur-xl relative overflow-hidden"
+    class="relative mt-20 border-t border-[#00C2FF]/20 bg-[#020205] overflow-hidden"
+    id="hire-section"
   >
     <div
-      class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-20 bg-[#00FF94] blur-[100px] opacity-20 pointer-events-none"
+      class="absolute bottom-0 left-0 w-full h-[200px] bg-gradient-to-t from-[#00C2FF]/10 to-transparent pointer-events-none"
+    ></div>
+    <div
+      class="absolute -bottom-[100px] left-1/2 -translate-x-1/2 w-[60%] h-[200px] bg-[#00C2FF] blur-[100px] opacity-20"
     ></div>
 
-    <div
-      class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6"
-      id="hire-section"
-    >
-      <p class="text-slate-400 font-mono text-sm tracking-widest">© {{ currentYear() }} Anton.Po</p>
-      <a href="https://upwork.com" target="_blank" class="cyber-button py-3 px-8 text-sm">
+    <div class="container mx-auto px-4 py-16 relative z-10 flex flex-col items-center text-center">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-8">
+        Ready to <span class="text-[#00C2FF]">Scale?</span>
+      </h2>
+      <p class="text-slate-400 max-w-2xl mb-10">
+        I deliver high-performance architecture for complex business needs. Let's discuss your next
+        breakthrough.
+      </p>
+
+      <a
+        href="https://upwork.com"
+        target="_blank"
+        class="px-10 py-5 bg-gradient-to-r from-[#00C2FF] to-[#0075FF] text-white font-bold rounded-full text-lg hover:shadow-[0_0_40px_rgba(0,194,255,0.4)] transition-shadow"
+      >
         Hire Me on Upwork
       </a>
+
+      <div class="mt-16 text-slate-600 font-mono text-sm flex gap-8">
+        <span>© {{ currentYear() }} Anton.Po</span>
+        <span>STATUS: AVAILABLE</span>
+        <span>Uptime: 99.9%</span>
+      </div>
     </div>
   </footer>
 
-  } @placeholder (minimum 1000ms) {
-  <div
-    class="min-h-screen bg-[#050510] flex flex-col items-center justify-center relative overflow-hidden"
-  >
-    <div class="absolute inset-0 bg-grid-moving opacity-20"></div>
-    <div class="relative z-10 flex flex-col items-center">
-      <div
-        class="w-24 h-24 border-4 border-[#00C2FF]/20 border-t-[#00FF94] rounded-full animate-spin mb-8"
-      ></div>
-      <p class="font-mono text-[#00FF94] tracking-[0.3em] animate-pulse">
-        INITIALIZING CORE SYSTEMS...
-      </p>
-    </div>
+  } @placeholder {
+  <div class="h-screen w-full flex items-center justify-center bg-[#050510]">
+    <span class="text-[#00C2FF] animate-pulse font-mono">LOADING SYSTEM...</span>
   </div>
   }
 </main>

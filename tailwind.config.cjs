@@ -18,16 +18,6 @@ module.exports = {
         sans: ['ui-sans-serif', 'system-ui', 'sans-serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'monospace'],
       },
-      backgroundImage: {
-        'cyber-gradient': 'linear-gradient(to right, #00FF66, #BD00FF)',
-        'circuit-pattern':
-          'radial-gradient(circle at 50% 50%, rgba(20, 20, 40, 0) 0%, rgba(5, 5, 16, 1) 100%), repeating-linear-gradient(transparent, transparent 2px, rgba(0, 194, 255, 0.03) 2px, rgba(0, 194, 255, 0.03) 4px)',
-      },
-      boxShadow: {
-        'neon-blue': '0 0 10px rgba(0, 194, 255, 0.5), 0 0 20px rgba(0, 194, 255, 0.2)',
-        'neon-purple': '0 0 10px rgba(189, 0, 255, 0.5), 0 0 20px rgba(189, 0, 255, 0.2)',
-        'neon-btn': '0 0 15px rgba(0, 255, 102, 0.6)',
-      },
     },
   },
   plugins: [],
