@@ -25,12 +25,17 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/anton-po.ico",
+              {
+                "glob": "**/*",
+                "input": "src/assets/favicons",
+                "output": "/favicons"
+              },
               {
                 "glob": "**/*",
                 "input": "src/assets/",
                 "output": "/assets/"
-              }
+              },
+              "src/anton-po.ico"
             ],
             "styles": ["src/tailwind.css", "src/styles.scss"],
             "server": "src/main.server.ts",

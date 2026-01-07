@@ -2,13 +2,13 @@ import { Component, signal, ChangeDetectionStrategy, OnInit, inject } from '@ang
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 
-interface TechItem {
+export interface TechItem {
   name: string;
   iconName: string;
   group: string;
 }
 
-interface ExperienceItem {
+export interface ExperienceItem {
   title: string;
   description: string;
   result: string;

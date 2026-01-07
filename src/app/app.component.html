@@ -48,9 +48,11 @@
   <section class="min-h-[95vh] flex flex-col justify-center items-center relative px-4 pt-10">
     <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div
-        class="relative flex justify-center lg:justify-end order-1 h-[500px] w-full items-center"
+        class="relative flex justify-center lg:justify-end order-1 h-[500px] w-full items-center flex-shrink-0"
       >
-        <div class="relative w-[400px] h-[400px] flex items-center justify-center">
+        <div
+          class="relative w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] flex-shrink-0 flex items-center justify-center"
+        >
           <div
             class="absolute inset-0 border border-[#00C2FF]/30 rounded-full animate-[spin_20s_linear_infinite]"
           ></div>
@@ -63,12 +65,13 @@
             class="absolute w-[80%] h-[80%] bg-[#00C2FF] blur-[80px] opacity-20 animate-pulse"
           ></div>
 
-          <div class="relative w-[320px] h-[320px] z-10 flex items-center justify-center">
+          <div
+            class="relative w-[220px] h-[220px] sm:w-[320px] sm:h-[320px] z-10 flex items-center justify-center"
+          >
             <img
               ngSrc="assets/anton-po.png"
               alt="Anton Po - Senior Full Stack Developer"
-              width="320"
-              height="320"
+              fill
               priority
               class="object-cover avatar-mask drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
             />
@@ -150,7 +153,7 @@
     </div>
 
     <div
-      class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce flex flex-col items-center gap-2 opacity-50"
+      class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce flex flex-col items-center gap-2 opacity-50 hide-scroll-arrow"
     >
       <span class="text-[10px] uppercase tracking-widest text-[#00C2FF]">Scroll</span>
       <svg class="w-5 h-5 text-[#00C2FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -283,7 +286,7 @@
       </a>
 
       <div class="mt-16 text-slate-600 font-mono text-sm flex gap-8">
-        <span>© {{ currentYear() }} Anton.Po</span>
+        <span>© {{ '2025' + '-' + currentYear() }} Anton.Po</span>
         <span>STATUS: AVAILABLE</span>
         <span>Uptime: 99.9%</span>
       </div>
