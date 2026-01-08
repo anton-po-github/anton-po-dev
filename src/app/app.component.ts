@@ -1,5 +1,5 @@
 import { Component, signal, ChangeDetectionStrategy, OnInit, inject } from '@angular/core';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { CommonModule, NgOptimizedImage, DOCUMENT } from '@angular/common'; // Added DOCUMENT
 import { Meta, Title } from '@angular/platform-browser';
 
 export interface TechItem {
@@ -27,6 +27,8 @@ export class AppComponent implements OnInit {
   // --- Services for SEO ---
   private meta = inject(Meta);
   private titleService = inject(Title);
+  // Inject document to get the origin for absolute URLs if needed
+  private document = inject(DOCUMENT);
 
   // --- Signals State ---
   readonly techStack = signal<TechItem[]>([
@@ -66,6 +68,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     // --- SEO Configuration ---
+
+    // Define the base URL. In production, hardcode this or pull from environment to ensure it's always the public domain.
+    const baseUrl = this.document.location.origin;
+
     // Sets the tab title in the browser
     this.titleService.setTitle('Anton.Po | Senior Full Stack .NET & Angular Developer');
 
@@ -81,18 +87,27 @@ export class AppComponent implements OnInit {
         content: 'Angular, .NET, Azure, Full Stack Developer, TypeScript, C#, Software Architect',
       },
       { name: 'author', content: 'Anton.Po' },
-      { name: 'robots', content: 'index, follow' }, // Tells Google to index this page
+      { name: 'robots', content: 'index, follow' },
+
+      // Open Graph / Facebook / LinkedIn
       { property: 'og:title', content: 'Anton.Po - High-Performance Web Solutions' },
       {
         property: 'og:description',
         content: 'Building the next web with Angular v21 and .NET 10.',
       },
-      { property: 'og:image', content: 'assets/anton-po.png' }, // Ensure this path is absolute in production
+      // BEST PRACTICE: Use absolute URL for og:image so crawlers can find it 100%
+      { property: 'og:image', content: `${baseUrl}/assets/anton-po.webp` },
+      { property: 'og:url', content: baseUrl },
       { property: 'og:type', content: 'website' },
-    ]);
-  }
 
-  scrollToHire(): void {
-    document.getElementById('hire-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Twitter Card
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: 'Anton.Po | Senior Full Stack .NET & Angular Developer' },
+      {
+        name: 'twitter:description',
+        content: 'Building the next web with Angular v21 and .NET 10.',
+      },
+      { name: 'twitter:image', content: `${baseUrl}/assets/anton-po.webp` },
+    ]);
   }
 }
