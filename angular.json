@@ -35,7 +35,7 @@
                 "input": "src/assets/",
                 "output": "/assets/"
               },
-              "src/anton-po.ico"
+              "src/favicon.ico"
             ],
             "styles": ["src/tailwind.css", "src/styles.scss"],
             "server": "src/main.server.ts",
