@@ -123,6 +123,7 @@
         <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start mt-10">
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://www.upwork.com/freelancers/~0170d57a30eaf6251c?mp_source=share"
             class="cursor-pointer relative group px-10 py-4 bg-[#00C2FF] text-black font-bold rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]"
           >
@@ -135,6 +136,7 @@
           <a
             href="https://github.com/anton-po-github"
             target="_blank"
+            rel="noopener noreferrer"
             class="px-10 py-4 border border-[#94A3B8]/30 text-slate-300 rounded-full hover:bg-white/5 hover:text-white transition-colors flex items-center justify-center gap-2 group"
           >
             <svg
@@ -168,134 +170,135 @@
   </section>
 
   @defer (on viewport) {
-
-  <section class="py-24 container mx-auto px-4 relative z-10">
-    <div class="flex items-center gap-4 mb-12">
-      <div class="h-[2px] w-12 bg-[#00C2FF]"></div>
-      <h3 class="text-[34px] font-bold text-white">Core Technologies</h3>
-    </div>
-
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-      @for (item of techStack(); track item.name) {
-      <div
-        class="group relative p-6 bg-gradient-to-b from-[#131934] to-[#050510] border border-[#00C2FF]/10 rounded-xl hover:border-[#00C2FF]/50 transition-all duration-300 hover:-translate-y-2"
-      >
-        <div
-          class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#00C2FF] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
-        ></div>
-
-        <div class="flex flex-col items-center">
-          <img
-            [src]="'assets/icons/' + item.iconName"
-            [alt]="item.name + ' Technology'"
-            class="w-16 h-16 mb-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_15px_rgba(0,194,255,0.5)] transition-all"
-          />
-          <span class="text-lg font-bold text-slate-200">{{ item.name }}</span>
-          <span class="text-xs text-[#94A3B8] mt-1">{{ item.group }}</span>
-        </div>
-      </div>
-      }
-    </div>
-  </section>
-
-  <section class="py-24 relative overflow-hidden">
-    <div
-      class="absolute right-0 top-1/4 w-[300px] h-[600px] bg-[#BD00FF] blur-[150px] opacity-10 pointer-events-none"
-    ></div>
-
-    <div class="container mx-auto px-4 relative z-10">
-      <div class="flex items-center justify-end gap-4 mb-12">
-        <h3 class="text-[34px] font-bold text-white">Impact & Results</h3>
-        <div class="h-[2px] w-12 bg-[#BD00FF]"></div>
+    <section class="py-24 container mx-auto px-4 relative z-10">
+      <div class="flex items-center gap-4 mb-12">
+        <div class="h-[2px] w-12 bg-[#00C2FF]"></div>
+        <h3 class="text-[34px] font-bold text-white">Core Technologies</h3>
       </div>
 
-      <div class="space-y-6">
-        @for (job of experience(); track job.title) {
-        <div
-          class="relative p-8 rounded-2xl bg-[#0D1126]/60 backdrop-blur border-l-4 border-[#BD00FF] hover:bg-[#131934] transition-colors group"
-        >
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        @for (item of techStack(); track item.name) {
           <div
-            class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"
-          ></div>
-
-          <div class="relative z-10 grid md:grid-cols-[1fr_auto] gap-6">
-            <div>
-              <h4
-                class="text-2xl font-bold text-white mb-2 group-hover:text-[#BD00FF] transition-colors"
-              >
-                {{ job.title }}
-              </h4>
-              <p class="text-slate-400 leading-relaxed mb-4">{{ job.description }}</p>
-              <div class="flex flex-wrap gap-2">
-                @for(tag of job.tech.split(','); track tag) {
-                <span
-                  class="px-2 py-1 text-xs font-mono bg-[#BD00FF]/10 text-[#BD00FF] rounded border border-[#BD00FF]/20"
-                  >{{ tag.trim() }}</span
-                >
-                }
-              </div>
-            </div>
-
+            class="group relative p-6 bg-gradient-to-b from-[#131934] to-[#050510] border border-[#00C2FF]/10 rounded-xl hover:border-[#00C2FF]/50 transition-all duration-300 hover:-translate-y-2"
+          >
             <div
-              class="flex flex-col justify-center items-start md:items-start border-t md:border-t-0 md:border-l border-[#ffffff]/10 pt-4 md:pt-0 md:pl-8"
-            >
-              <span
-                class="text-[18px] font-medium text-white uppercase tracking-widest mb-1 text-left"
-                >Impact</span
-              >
-              <span class="text-xl md:text-2xl font-bold text-[#00FF94] shadow-[#00FF94]">{{
-                job.result
-              }}</span>
+              class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#00C2FF] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+            ></div>
+
+            <div class="flex flex-col items-center">
+              <img
+                [src]="'assets/icons/' + item.iconName"
+                [alt]="item.name + ' Technology'"
+                class="w-16 h-16 mb-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_15px_rgba(0,194,255,0.5)] transition-all"
+              />
+              <span class="text-lg font-bold text-slate-200">{{ item.name }}</span>
+              <span class="text-xs text-[#94A3B8] mt-1">{{ item.group }}</span>
             </div>
           </div>
-        </div>
         }
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer
-    class="relative mt-20 border-t border-[#00C2FF]/20 bg-[#020205] overflow-hidden"
-    id="hire-section"
-  >
-    <div
-      class="absolute bottom-0 left-0 w-full h-[200px] bg-gradient-to-t from-[#00C2FF]/10 to-transparent pointer-events-none"
-    ></div>
-    <div
-      class="absolute -bottom-[100px] left-1/2 -translate-x-1/2 w-[60%] h-[200px] bg-[#00C2FF] blur-[100px] opacity-20"
-    ></div>
+    <section class="py-24 relative overflow-hidden">
+      <div
+        class="absolute right-0 top-1/4 w-[300px] h-[600px] bg-[#BD00FF] blur-[150px] opacity-10 pointer-events-none"
+      ></div>
 
-    <div class="container mx-auto px-4 py-16 relative z-10 flex flex-col items-center text-center">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-8">
-        Ready to <span class="text-[#00C2FF]">Scale?</span>
-      </h2>
-      <p class="text-slate-400 max-w-2xl mb-10">
-        I deliver high-performance architecture for complex business needs. Let's discuss your next
-        breakthrough.
-      </p>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="flex items-center justify-end gap-4 mb-12">
+          <h3 class="text-[34px] font-bold text-white">Impact & Results</h3>
+          <div class="h-[2px] w-12 bg-[#BD00FF]"></div>
+        </div>
 
-      <a
-        href="https://www.upwork.com/freelancers/~0170d57a30eaf6251c?mp_source=share"
-        target="_blank"
-        class="px-10 py-5 bg-[#00C2FF] text-black font-bold rounded-full text-lg hover:shadow-[0_0_40px_rgba(0,194,255,0.4)] transition-shadow cursor-pointer relative overflow-hidden group"
-      >
-        <span class="relative z-10">Hire Me on Upwork</span>
-        <div
-          class="absolute inset-0 bg-gradient-to-r from-[#00FF94] to-[#00C2FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        ></div>
-      </a>
+        <div class="space-y-6">
+          @for (job of experience(); track job.title) {
+            <div
+              class="relative p-8 rounded-2xl bg-[#0D1126]/60 backdrop-blur border-l-4 border-[#BD00FF] hover:bg-[#131934] transition-colors group"
+            >
+              <div
+                class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"
+              ></div>
 
-      <div class="mt-16 text-slate-600 font-mono text-sm flex gap-8">
-        <span>© {{ '2025' + '-' + currentYear() }} Anton.Po</span>
-        <span>STATUS: AVAILABLE</span>
-        <span>Uptime: 99.9%</span>
+              <div class="relative z-10 grid md:grid-cols-[1fr_auto] gap-6">
+                <div>
+                  <h4
+                    class="text-2xl font-bold text-white mb-2 group-hover:text-[#BD00FF] transition-colors"
+                  >
+                    {{ job.title }}
+                  </h4>
+                  <p class="text-slate-400 leading-relaxed mb-4">{{ job.description }}</p>
+                  <div class="flex flex-wrap gap-2">
+                    @for (tag of job.tech.split(','); track tag) {
+                      <span
+                        class="px-2 py-1 text-xs font-mono bg-[#BD00FF]/10 text-[#BD00FF] rounded border border-[#BD00FF]/20"
+                        >{{ tag.trim() }}</span
+                      >
+                    }
+                  </div>
+                </div>
+
+                <div
+                  class="flex flex-col justify-center items-start md:items-start border-t md:border-t-0 md:border-l border-[#ffffff]/10 pt-4 md:pt-0 md:pl-8"
+                >
+                  <span
+                    class="text-[18px] font-medium text-white uppercase tracking-widest mb-1 text-left"
+                    >Impact</span
+                  >
+                  <span class="text-xl md:text-2xl font-bold text-[#00FF94] shadow-[#00FF94]">{{
+                    job.result
+                  }}</span>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
+    <footer
+      class="relative mt-20 border-t border-[#00C2FF]/20 bg-[#020205] overflow-hidden"
+      id="hire-section"
+    >
+      <div
+        class="absolute bottom-0 left-0 w-full h-[200px] bg-gradient-to-t from-[#00C2FF]/10 to-transparent pointer-events-none"
+      ></div>
+      <div
+        class="absolute -bottom-[100px] left-1/2 -translate-x-1/2 w-[60%] h-[200px] bg-[#00C2FF] blur-[100px] opacity-20"
+      ></div>
+
+      <div
+        class="container mx-auto px-4 py-16 relative z-10 flex flex-col items-center text-center"
+      >
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-8">
+          Ready to <span class="text-[#00C2FF]">Scale?</span>
+        </h2>
+        <p class="text-slate-400 max-w-2xl mb-10">
+          I deliver high-performance architecture for complex business needs. Let's discuss your
+          next breakthrough.
+        </p>
+
+        <a
+          href="https://www.upwork.com/freelancers/~0170d57a30eaf6251c?mp_source=share"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-10 py-5 bg-[#00C2FF] text-black font-bold rounded-full text-lg hover:shadow-[0_0_40px_rgba(0,194,255,0.4)] transition-shadow cursor-pointer relative overflow-hidden group"
+        >
+          <span class="relative z-10">Hire Me on Upwork</span>
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-[#00FF94] to-[#00C2FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          ></div>
+        </a>
+
+        <div class="mt-16 text-slate-600 font-mono text-sm flex gap-8">
+          <span>© {{ '2025' + '-' + currentYear() }} Anton.Po</span>
+          <span>STATUS: AVAILABLE</span>
+          <span>Uptime: 99.9%</span>
+        </div>
+      </div>
+    </footer>
   } @placeholder {
-  <div class="h-screen w-full flex items-center justify-center bg-[#050510]">
-    <span class="text-[#00C2FF] animate-pulse font-mono">LOADING SYSTEM...</span>
-  </div>
+    <div class="h-screen w-full flex items-center justify-center bg-[#050510]">
+      <span class="text-[#00C2FF] animate-pulse font-mono">LOADING SYSTEM...</span>
+    </div>
   }
 </main>

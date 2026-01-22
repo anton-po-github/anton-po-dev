@@ -1,5 +1,5 @@
 import { Component, signal, ChangeDetectionStrategy, OnInit, inject } from '@angular/core';
-import { CommonModule, NgOptimizedImage, DOCUMENT } from '@angular/common'; // Added DOCUMENT
+import { CommonModule, NgOptimizedImage, DOCUMENT } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 
 export interface TechItem {
@@ -24,13 +24,12 @@ export interface ExperienceItem {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
-  // --- Services for SEO ---
+  // --- Services ---
   private meta = inject(Meta);
   private titleService = inject(Title);
-  // Inject document to get the origin for absolute URLs if needed
   private document = inject(DOCUMENT);
 
-  // --- Signals State ---
+  // --- Signals ---
   readonly techStack = signal<TechItem[]>([
     { name: 'Angular', iconName: 'ng.svg', group: 'Frontend' },
     { name: '.NET', iconName: 'dotnet.svg', group: 'Backend' },
@@ -42,67 +41,64 @@ export class AppComponent implements OnInit {
     {
       title: 'Enterprise CRM Transformation',
       description:
-        'Transformed a legacy CRM into a modern, extensible Angular v21 product that improved developer velocity and enabled rapid feature delivery aligned with customer needs.',
-      result:
-        'Accelerated release cadence from monthly to weekly and increased customer adoption by 25%.',
+        'Transformed a legacy CRM into a modern, extensible Angular v21 product. Improved developer velocity and enabled rapid feature delivery.',
+      result: 'Accelerated release cadence from monthly to weekly. Increased adoption by 25%.',
       tech: 'Angular v21, RxJS, NgRx, TypeScript',
     },
     {
-      title: 'Scalable Azure Platform for Growth',
+      title: 'Scalable Azure Platform',
       description:
-        'Built a cost-efficient, scalable backend to support rapid user growth while preserving performance SLAs. Partnered with product and ops to align costs and SLOs with roadmap goals.',
-      result:
-        'Supported 3× user growth without service degradation; reduced operational costs by 30%.',
-      tech: '.NET 10, Azure Functions, PostgreSQL, Azure.Storage.Blobs',
+        'Built a cost-efficient backend to support rapid user growth. Partnered with product and ops to align costs with roadmap goals.',
+      result: 'Supported 3× user growth without degradation. Reduced cloud costs by 30%.',
+      tech: '.NET 10, Azure Functions, PostgreSQL, Storage Blobs',
     },
     {
-      title: 'End-to-End Feature Delivery',
+      title: 'End-to-End Delivery',
       description:
-        'Led cross-functional deliveries from concept to production — requirements, architecture, implementation, testing and monitoring — ensuring high quality and timely launches.',
-      result: 'Delivered multiple high-impact features on schedule, improving retention and NPS.',
-      tech: 'Agile, CI/CD, Unit & E2E testing, Telemetry',
+        'Led cross-functional deliveries from concept to production — architecture, testing and monitoring — ensuring high quality.',
+      result: 'Delivered multiple high-impact features on schedule, improving retention.',
+      tech: 'Agile, CI/CD, Unit & E2E testing',
     },
   ]);
 
   readonly currentYear = signal(new Date().getFullYear());
 
   ngOnInit(): void {
-    // --- SEO Configuration ---
-
-    // Define the base URL. In production, hardcode this or pull from environment to ensure it's always the public domain.
     const baseUrl = this.document.location.origin;
 
-    // Sets the tab title in the browser
+    // --- BEST PRACTICE SEO ---
     this.titleService.setTitle('Anton.Po | Senior Full Stack .NET & Angular Developer');
 
-    // Sets meta tags for Google, Twitter, LinkedIn previews
     this.meta.addTags([
+      // Description optimized to ~160 chars for Google SERP
       {
         name: 'description',
         content:
-          'Senior Full Stack Developer specialized in Angular v21, .NET 10, and Azure. Architecting high-performance web solutions.',
+          'Senior Full Stack Developer specializing in Angular v21, .NET 10, and Azure. I deliver high-performance architecture for complex business needs.',
       },
       {
         name: 'keywords',
-        content: 'Angular, .NET, Azure, Full Stack Developer, TypeScript, C#, Software Architect',
+        content:
+          'Angular, .NET, Azure, Full Stack Developer, TypeScript, C#, Software Architect, Web Performance',
       },
       { name: 'author', content: 'Anton.Po' },
       { name: 'robots', content: 'index, follow' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { charset: 'UTF-8' },
 
-      // Open Graph / Facebook / LinkedIn
+      // Open Graph (Facebook/LinkedIn)
       { property: 'og:title', content: 'Anton.Po - High-Performance Web Solutions' },
       {
         property: 'og:description',
         content: 'Building the next web with Angular v21 and .NET 10.',
       },
-      // BEST PRACTICE: Use absolute URL for og:image so crawlers can find it 100%
       { property: 'og:image', content: `${baseUrl}/assets/anton-po.webp` },
       { property: 'og:url', content: baseUrl },
       { property: 'og:type', content: 'website' },
 
       // Twitter Card
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'Anton.Po | Senior Full Stack .NET & Angular Developer' },
+      { name: 'twitter:title', content: 'Anton.Po | .NET & Angular Architect' },
       {
         name: 'twitter:description',
         content: 'Building the next web with Angular v21 and .NET 10.',
