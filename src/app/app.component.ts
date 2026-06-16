@@ -46,15 +46,15 @@ export class AppComponent implements OnInit {
         // 'Achieved sub 8-18ms inference latency in production, processing high-volume text telemetry with zero-allocation heap overhead.',
         '',
       description:
-        'Spearheaded the architecture and full-stack development of an enterprise-grade AI moderation platform. Engineered a zero-latency, hardware-accelerated inference pipeline in .NET 10, enforcing strict $O(1)$ algorithmic complexity. Directed the fine-tuning of specialized NLP models (MiniLM-L6-v2, RoBERTa) for real-time contextual toxicity detection. Architected a resilient edge-routing cloud infrastructure and delivered a Lighthouse-optimized Angular v21 frontend with automated PayPro Global billing integration.',
-      tech: 'AI, .NET 10, Angular v21, ONNX Runtime, Hetzner, Cloudflare',
+        'Spearheaded the architecture and full-stack development of an enterprise-grade AI moderation platform. Engineered a zero-latency, hardware-accelerated inference pipeline in .NET 10, enforcing strict $O(1)$ algorithmic complexity. Directed the fine-tuning of specialized NLP models (MiniLM-L6-v2, RoBERTa) for real-time contextual toxicity detection. Architected a resilient edge-routing cloud infrastructure and delivered a Lighthouse-optimized Angular v22 frontend with automated PayPro Global billing integration.',
+      tech: 'AI, .NET 10, Angular v22, ONNX Runtime, Hetzner, Cloudflare',
     },
     {
       title: 'Enterprise CRM Transformation',
       description:
-        'Transformed a legacy CRM into a modern, extensible Angular v21 product. Improved developer velocity and enabled rapid feature delivery.',
+        'Transformed a legacy CRM into a modern, extensible Angular v22 product. Improved developer velocity and enabled rapid feature delivery.',
       result: 'Accelerated release cadence from monthly to weekly. Increased adoption by 25%.',
-      tech: 'Angular v21, RxJS, NgRx, TypeScript',
+      tech: 'Angular v22, RxJS, NgRx, TypeScript',
     },
     {
       title: 'Scalable Azure Platform',
@@ -85,7 +85,7 @@ export class AppComponent implements OnInit {
       {
         name: 'description',
         content:
-          'Senior Full Stack Developer specializing in Angular v21, .NET 10, and Azure. I deliver high-performance architecture for complex business needs.',
+          'Senior Full Stack Developer specializing in Angular v22, .NET 10, and Azure. I deliver high-performance architecture for complex business needs.',
       },
       {
         name: 'keywords',
@@ -101,7 +101,7 @@ export class AppComponent implements OnInit {
       { property: 'og:title', content: 'Anton.Po - High-Performance Web Solutions' },
       {
         property: 'og:description',
-        content: 'Building the next web with Angular v21 and .NET 10.',
+        content: 'Building the next web with Angular v22 and .NET 10.',
       },
       { property: 'og:image', content: `${baseUrl}/assets/anton-po.webp` },
       { property: 'og:url', content: baseUrl },
@@ -112,7 +112,7 @@ export class AppComponent implements OnInit {
       { name: 'twitter:title', content: 'Anton.Po | .NET & Angular Architect' },
       {
         name: 'twitter:description',
-        content: 'Building the next web with Angular v21 and .NET 10.',
+        content: 'Building the next web with Angular v22 and .NET 10.',
       },
       { name: 'twitter:image', content: `${baseUrl}/assets/anton-po.webp` },
     ]);
