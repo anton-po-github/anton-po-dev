@@ -10,9 +10,11 @@ export interface TechItem {
 
 export interface ExperienceItem {
   title: string;
+  company?: string;
   description: string;
   result: string;
   tech: string;
+  url?: string;
 }
 
 @Component({
@@ -24,12 +26,10 @@ export interface ExperienceItem {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
-  // --- Services ---
   private meta = inject(Meta);
   private titleService = inject(Title);
   private document = inject(DOCUMENT);
 
-  // --- Signals ---
   readonly techStack = signal<TechItem[]>([
     { name: 'Angular', iconName: 'ng.svg', group: 'Frontend' },
     { name: '.NET', iconName: 'dotnet.svg', group: 'Backend' },
@@ -38,6 +38,17 @@ export class AppComponent implements OnInit {
   ]);
 
   readonly experience = signal<ExperienceItem[]>([
+    {
+      title: 'Team Lead & Software Architect',
+      company: 'Aegitox',
+      url: 'https://aegitox.com/',
+      result:
+        // 'Achieved sub 8-18ms inference latency in production, processing high-volume text telemetry with zero-allocation heap overhead.',
+        '',
+      description:
+        'Spearheaded the architecture and full-stack development of an enterprise-grade AI moderation platform. Engineered a zero-latency, hardware-accelerated inference pipeline in .NET 10, enforcing strict $O(1)$ algorithmic complexity. Directed the fine-tuning of specialized NLP models (MiniLM-L6-v2, RoBERTa) for real-time contextual toxicity detection. Architected a resilient edge-routing cloud infrastructure and delivered a Lighthouse-optimized Angular v21 frontend with automated PayPro Global billing integration.',
+      tech: 'AI, .NET 10, Angular v21, ONNX Runtime, Hetzner, Cloudflare',
+    },
     {
       title: 'Enterprise CRM Transformation',
       description:

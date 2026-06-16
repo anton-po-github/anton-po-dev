@@ -215,17 +215,50 @@
             <div
               class="relative p-8 rounded-2xl bg-[#0D1126]/60 backdrop-blur border-l-4 border-[#BD00FF] hover:bg-[#131934] transition-colors group"
             >
-              <div
+              <!--  <div
                 class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"
-              ></div>
+              ></div> -->
 
               <div class="relative z-10 grid md:grid-cols-[1fr_auto] gap-6">
                 <div>
-                  <h4
-                    class="text-2xl font-bold text-white mb-2 group-hover:text-[#BD00FF] transition-colors"
-                  >
-                    {{ job.title }}
-                  </h4>
+                  @if (job.url) {
+                    <div class="flex flex-row justify-between items-center">
+                      <h4
+                        class="text-2xl font-bold text-white mb-2 group-hover:text-[#BD00FF] transition-colors"
+                      >
+                        {{ job.title }}
+                      </h4>
+
+                      <a
+                        [href]="job.url"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-[#00C2FF] mb-2 hover:text-[#BD00FF] transition-colors font-bold text-xl inline-flex items-center gap-2 group/link"
+                      >
+                        {{ job.company }}
+                        <svg
+                          class="w-5 h-5 text-[#00C2FF] group-hover/link:text-[#BD00FF] transition-colors"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                          <polyline points="15 3 21 3 21 9"></polyline>
+                          <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                      </a>
+                    </div>
+                  } @else {
+                    <h4
+                      class="text-2xl font-bold text-white mb-2 group-hover:text-[#BD00FF] transition-colors"
+                    >
+                      {{ job.title }}
+                    </h4>
+                  }
+
                   <p class="text-slate-400 leading-relaxed mb-4">{{ job.description }}</p>
                   <div class="flex flex-wrap gap-2">
                     @for (tag of job.tech.split(','); track tag) {
@@ -237,17 +270,19 @@
                   </div>
                 </div>
 
-                <div
-                  class="flex flex-col justify-center items-start md:items-start border-t md:border-t-0 md:border-l border-[#ffffff]/10 pt-4 md:pt-0 md:pl-8"
-                >
-                  <span
-                    class="text-[18px] font-medium text-white uppercase tracking-widest mb-1 text-left"
-                    >Impact</span
+                @if (!job.url) {
+                  <div
+                    class="flex flex-col justify-center items-start md:items-start border-t md:border-t-0 md:border-l border-[#ffffff]/10 pt-4 md:pt-0 md:pl-8"
                   >
-                  <span class="text-xl md:text-2xl font-bold text-[#00FF94] shadow-[#00FF94]">{{
-                    job.result
-                  }}</span>
-                </div>
+                    <span
+                      class="text-[18px] font-medium text-white uppercase tracking-widest mb-1 text-left"
+                      >Impact</span
+                    >
+                    <span class="text-xl md:text-2xl font-bold text-[#00FF94] shadow-[#00FF94]">{{
+                      job.result
+                    }}</span>
+                  </div>
+                }
               </div>
             </div>
           }

@@ -1,9 +1,28 @@
 @use 'tailwindcss';
 
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  /* Point to your local file. If you convert to woff2 later, change the extension and format */
+  src: url('/assets/fonts/PlusJakartaSans-VariableFont_wght.woff2') format('woff2');
+  font-weight: 200 800; /* This enables the variable font weight axis */
+  font-style: normal;
+  font-display: swap; /* Prevents invisible text while loading */
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
 :root {
   background-color: #050510;
   color: #e2e8f0;
-  font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+  font-family:
+    'Plus Jakarta Sans',
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
     sans-serif;
 }
 
@@ -46,7 +65,8 @@ body {
   inset: -50%;
   width: 200%;
   height: 200%;
-  background-image: linear-gradient(rgba(0, 194, 255, 0.05) 1px, transparent 1px),
+  background-image:
+    linear-gradient(rgba(0, 194, 255, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 194, 255, 0.05) 1px, transparent 1px);
   background-size: 60px 60px;
 
