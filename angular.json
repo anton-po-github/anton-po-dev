@@ -32,7 +32,8 @@
               },
               "src/favicon.ico",
               "src/robots.txt",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              "src/llms.txt"
             ],
             "styles": ["src/tailwind.css", "src/styles.scss"],
             "server": "src/main.server.ts",

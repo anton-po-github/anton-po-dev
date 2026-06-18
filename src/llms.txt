@@ -1,0 +1,19 @@
+# Anton.Po - Senior Full Stack .NET & Angular Developer
+
+> Senior Full Stack Developer specializing in Angular v22, .NET 10, and Azure. I deliver high-performance architecture for complex business needs.
+
+## Core Navigation
+- [Hire Me on Upwork](https://www.upwork.com/freelancers/~0170d57a30eaf6251c?mp_source=share)
+- [GitHub Profile](https://github.com/anton-po-github)
+- [Aegitox Project](https://aegitox.com/)
+
+## Core Technologies
+- **Frontend:** Angular v22
+- **Backend:** .NET 10
+- **Cloud Infrastructure & Database:** Azure, PostgreSQL
+
+## Experience & Architectural Impact
+- **Aegitox (Team Lead & Software Architect):** Spearheaded the architecture and full-stack development of an enterprise-grade AI moderation platform. Engineered a zero-latency, hardware-accelerated inference pipeline in .NET 10, enforcing strict $O(1)$ algorithmic complexity. Directed the fine-tuning of specialized NLP models (MiniLM-L6-v2, RoBERTa) for real-time contextual toxicity detection.
+- **Enterprise CRM Transformation:** Transformed a legacy CRM into a modern, extensible Angular v22 product. Accelerated release cadence from monthly to weekly and increased adoption by 25%.
+- **Scalable Azure Platform:** Built a cost-efficient backend to support rapid user growth. Supported 3× user growth without degradation and reduced cloud costs by 30%.
+- **End-to-End Delivery:** Led cross-functional deliveries from concept to production—architecture, testing, and monitoring—utilizing Agile, CI/CD, Unit, and E2E testing.
