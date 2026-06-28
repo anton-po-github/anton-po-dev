@@ -101,8 +101,9 @@
           >
         </div>
 
-        <h1
-          class="text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight drop-shadow-2xl"
+        <div
+          class="text-5xl lg:text-7xl font-bold tracking-tight text-white mb-2 leading-tight drop-shadow-2xl"
+          aria-hidden="true"
         >
           Architecting <br />
           <span
@@ -110,15 +111,16 @@
           >
             The Next Web
           </span>
+        </div>
+
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-4">
+          Senior Full Stack .NET 10 & Angular 22 Software Architect
         </h1>
 
         <h2
-          class="text-xl text-[#94A3B8] font-mono mb-8 h-8 flex flex-col lg:items-start items-center gap-2"
+          class="text-sm sm:text-base text-[#94A3B8] font-mono mb-8 block border-l-2 border-[#00C2FF] pl-4 leading-relaxed text-left"
         >
-          <span>Senior Full Stack Developer</span>
-          <span class="text-[#00C2FF] text-sm tracking-[0.2em] border-t border-[#00C2FF]/30 pt-2"
-            >.NET 10 & ANGULAR v22</span
-          >
+          10+ Years Expertise • Clean Enterprise Architecture • High-Performance Web Stacks
         </h2>
 
         <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start mt-10">
@@ -170,171 +172,238 @@
     </div>
   </section>
 
-  @defer (on viewport) {
-    <section class="py-24 container mx-auto px-4 relative z-10">
-      <div class="flex items-center gap-4 mb-12">
-        <div class="h-[2px] w-12 bg-[#00C2FF]"></div>
-        <h3 class="text-[34px] font-bold text-white">Core Technologies</h3>
-      </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        @for (item of techStack(); track item.name) {
-          <div
-            class="group relative p-6 bg-gradient-to-b from-[#131934] to-[#050510] border border-[#00C2FF]/10 rounded-xl hover:border-[#00C2FF]/50 transition-all duration-300 hover:-translate-y-2"
-          >
-            <div
-              class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#00C2FF] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
-            ></div>
-
-            <div class="flex flex-col items-center">
-              <img
-                [src]="'assets/icons/' + item.iconName"
-                [alt]="item.name + ' Technology'"
-                class="w-16 h-16 mb-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_15px_rgba(0,194,255,0.5)] transition-all"
-              />
-              <span class="text-lg font-bold text-slate-200">{{ item.name }}</span>
-              <span class="text-xs text-[#94A3B8] mt-1">{{ item.group }}</span>
-            </div>
-          </div>
-        }
-      </div>
-    </section>
-
-    <section class="py-24 relative overflow-hidden">
-      <div
-        class="absolute right-0 top-1/4 w-[300px] h-[600px] bg-[#BD00FF] blur-[150px] opacity-10 pointer-events-none"
-      ></div>
-
-      <div class="container mx-auto px-4 relative z-10">
-        <div class="flex items-center justify-end gap-4 mb-12">
-          <h3 class="text-[34px] font-bold text-white">Impact & Results</h3>
-          <div class="h-[2px] w-12 bg-[#BD00FF]"></div>
+  <section
+    class="relative z-10 w-full max-w-[1350px] mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-transparent"
+  >
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative">
+      <div class="lg:col-span-5 flex flex-col justify-center text-center lg:text-left">
+        <div
+          class="inline-flex items-center w-fit mx-auto lg:mx-0 gap-2 px-3 py-1 rounded bg-[#BD00FF]/10 border border-[#BD00FF]/30 text-[#BD00FF] font-mono text-xs uppercase tracking-widest mb-6"
+        >
+          Engineering Mandates & Business ROI
         </div>
 
-        <div class="space-y-6">
-          @for (job of experience(); track job.title) {
-            <div
-              class="relative p-8 rounded-2xl bg-[#0D1126]/60 backdrop-blur border-l-4 border-[#BD00FF] hover:bg-[#131934] transition-colors group"
+        <h3 class="text-3xl sm:text-4xl font-bold text-white mb-4 tracking-tight">
+          Architectural Precision. <br class="hidden sm:block" />
+          Uncapped Business Scaling.
+        </h3>
+
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          I don’t just write code; I engineer robust, scalable solutions designed to take your
+          business to the next level. With over a decade of enterprise experience, I bridge the gap
+          between cutting-edge technical optimization and measurable business value—ensuring every
+          project is backed by pristine documentation, automated testing, and 100% transparent
+          communication.
+        </p>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div
+          class="relative bg-[#0D1126]/80 backdrop-blur-md border border-[#00C2FF]/20 rounded-2xl p-6 sm:p-8 shadow-2xl group hover:border-[#00C2FF]/50 transition-colors duration-500"
+        >
+          <div class="space-y-4 text-left font-sans">
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              When you hire a
+              <strong>Senior .NET 10 Developer </strong> and
+              <strong>Angular 22 SSR Specialist</strong>, you demand world-class reliability. My
+              front-end architecture leverages zoneless change detection, RxJS, and native Signal
+              state flows to deliver a pixel-perfect UI/UX. Combined with modern
+              <strong>Angular Server-Side Rendering (SSR)</strong>, I guarantee peak Core Web Vitals
+              and instant search engine crawler indexing.
+            </p>
+
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              On the back-end, I deliver
+              <strong>high-performance C# .NET 10 architecture</strong> structured around clean
+              principles and loosely coupled design. Every PostgreSQL query, cloud deployment, and
+              CI/CD pipeline is rigorously optimized. By enforcing strict
+              <strong>$O(1)$ constant-time execution</strong>
+              on critical data paths, we eliminate system bottlenecks and drastically reduce
+              infrastructure billing across Azure and Hetzner.
+            </p>
+          </div>
+
+          <div
+            class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#00C2FF] uppercase tracking-widest"
+          >
+            <span
+              >Architecture:
+              <span class="text-[#00FF94] font-bold">Clean & Maintainable</span></span
             >
-              <!--  <div
+            <span
+              >Delivery:
+              <span class="text-[#00FF94] font-bold">Predictable & Transparent</span></span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 container mx-auto px-4 relative z-10">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="h-[2px] w-12 bg-[#00C2FF]"></div>
+      <h3 class="text-[34px] font-bold text-white">Core Technologies</h3>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      @for (item of techStack(); track item.name) {
+        <div
+          class="group relative p-6 bg-gradient-to-b from-[#131934] to-[#050510] border border-[#00C2FF]/10 rounded-xl hover:border-[#00C2FF]/50 transition-all duration-300 hover:-translate-y-2"
+        >
+          <div
+            class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#00C2FF] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+          ></div>
+
+          <div class="flex flex-col items-center">
+            <img
+              [src]="'assets/icons/' + item.iconName"
+              [alt]="item.name + ' Technology'"
+              class="w-16 h-16 mb-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_15px_rgba(0,194,255,0.5)] transition-all"
+            />
+            <span class="text-lg font-bold text-slate-200">{{ item.name }}</span>
+            <span class="text-xs text-[#94A3B8] mt-1">{{ item.group }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="py-24 relative overflow-hidden">
+    <div
+      class="absolute right-0 top-1/4 w-[300px] h-[600px] bg-[#BD00FF] blur-[150px] opacity-10 pointer-events-none"
+    ></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="flex items-center justify-end gap-4 mb-12">
+        <h3 class="text-[34px] font-bold text-white">Impact & Results</h3>
+        <div class="h-[2px] w-12 bg-[#BD00FF]"></div>
+      </div>
+
+      <div class="space-y-6">
+        @for (job of experience(); track job.title) {
+          <div
+            class="relative p-8 rounded-2xl bg-[#0D1126]/60 backdrop-blur border-l-4 border-[#BD00FF] hover:bg-[#131934] transition-colors group"
+          >
+            <!--  <div
                 class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"
               ></div> -->
 
-              <div class="relative z-10 grid md:grid-cols-[1fr_auto] gap-6">
-                <div>
-                  @if (job.url) {
-                    <div class="flex flex-row justify-between items-center">
-                      <h4
-                        class="text-2xl font-bold text-white mb-2 group-hover:text-[#BD00FF] transition-colors"
-                      >
-                        {{ job.title }}
-                      </h4>
-
-                      <a
-                        [href]="job.url"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-[#00C2FF] mb-2 hover:text-[#BD00FF] transition-colors font-bold text-xl inline-flex items-center gap-2 group/link"
-                      >
-                        {{ job.company }}
-                        <svg
-                          class="w-5 h-5 text-[#00C2FF] group-hover/link:text-[#BD00FF] transition-colors"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                          <polyline points="15 3 21 3 21 9"></polyline>
-                          <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                      </a>
-                    </div>
-                  } @else {
+            <div class="relative z-10 grid md:grid-cols-[1fr_auto] gap-6">
+              <div>
+                @if (job.url) {
+                  <div class="flex flex-row justify-between items-center">
                     <h4
                       class="text-2xl font-bold text-white mb-2 group-hover:text-[#BD00FF] transition-colors"
                     >
                       {{ job.title }}
                     </h4>
-                  }
 
-                  <p class="text-slate-400 leading-relaxed mb-4">{{ job.description }}</p>
-                  <div class="flex flex-wrap gap-2">
-                    @for (tag of job.tech.split(','); track tag) {
-                      <span
-                        class="px-2 py-1 text-xs font-mono bg-[#BD00FF]/10 text-[#BD00FF] rounded border border-[#BD00FF]/20"
-                        >{{ tag.trim() }}</span
-                      >
-                    }
-                  </div>
-                </div>
-
-                @if (!job.url) {
-                  <div
-                    class="flex flex-col justify-center items-start md:items-start border-t md:border-t-0 md:border-l border-[#ffffff]/10 pt-4 md:pt-0 md:pl-8"
-                  >
-                    <span
-                      class="text-[18px] font-medium text-white uppercase tracking-widest mb-1 text-left"
-                      >Impact</span
+                    <a
+                      [href]="job.url"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-[#00C2FF] mb-2 hover:text-[#BD00FF] transition-colors font-bold text-xl inline-flex items-center gap-2 group/link"
                     >
-                    <span class="text-xl md:text-2xl font-bold text-[#00FF94] shadow-[#00FF94]">{{
-                      job.result
-                    }}</span>
+                      {{ job.company }}
+                      <svg
+                        class="w-5 h-5 text-[#00C2FF] group-hover/link:text-[#BD00FF] transition-colors"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                    </a>
                   </div>
+                } @else {
+                  <h4
+                    class="text-2xl font-bold text-white mb-2 group-hover:text-[#BD00FF] transition-colors"
+                  >
+                    {{ job.title }}
+                  </h4>
                 }
+
+                <p class="text-slate-400 leading-relaxed mb-4">{{ job.description }}</p>
+                <div class="flex flex-wrap gap-2">
+                  @for (tag of job.tech.split(','); track tag) {
+                    <span
+                      class="px-2 py-1 text-xs font-mono bg-[#BD00FF]/10 text-[#BD00FF] rounded border border-[#BD00FF]/20"
+                      >{{ tag.trim() }}</span
+                    >
+                  }
+                </div>
               </div>
+
+              @if (!job.url) {
+                <div
+                  class="flex flex-col justify-center items-start md:items-start border-t md:border-t-0 md:border-l border-[#ffffff]/10 pt-4 md:pt-0 md:pl-8"
+                >
+                  <span
+                    class="text-[18px] font-medium text-white uppercase tracking-widest mb-1 text-left"
+                    >Impact</span
+                  >
+                  <span class="text-xl md:text-2xl font-bold text-[#00FF94] shadow-[#00FF94]">{{
+                    job.result
+                  }}</span>
+                </div>
+              }
             </div>
-          }
-        </div>
+          </div>
+        }
       </div>
-    </section>
-
-    <footer
-      class="relative mt-20 border-t border-[#00C2FF]/20 bg-[#020205] overflow-hidden"
-      id="hire-section"
-    >
-      <div
-        class="absolute bottom-0 left-0 w-full h-[200px] bg-gradient-to-t from-[#00C2FF]/10 to-transparent pointer-events-none"
-      ></div>
-      <div
-        class="absolute -bottom-[100px] left-1/2 -translate-x-1/2 w-[60%] h-[200px] bg-[#00C2FF] blur-[100px] opacity-20"
-      ></div>
-
-      <div
-        class="container mx-auto px-4 py-16 relative z-10 flex flex-col items-center text-center"
-      >
-        <h2 class="text-3xl md:text-5xl font-bold text-white mb-8">
-          Ready to <span class="text-[#00C2FF]">Scale?</span>
-        </h2>
-        <p class="text-slate-400 max-w-2xl mb-10">
-          I deliver high-performance architecture for complex business needs. Let's discuss your
-          next breakthrough.
-        </p>
-
-        <a
-          href="https://www.upwork.com/freelancers/~0170d57a30eaf6251c?mp_source=share"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="px-10 py-5 bg-[#00C2FF] text-black font-bold rounded-full text-lg hover:shadow-[0_0_40px_rgba(0,194,255,0.4)] transition-shadow cursor-pointer relative overflow-hidden group"
-        >
-          <span class="relative z-10">Hire Me on Upwork</span>
-          <div
-            class="absolute inset-0 bg-gradient-to-r from-[#00FF94] to-[#00C2FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          ></div>
-        </a>
-
-        <div class="mt-16 text-slate-600 font-mono text-sm flex gap-8">
-          <span>© {{ currentYear() }} Anton.Po</span>
-          <span>STATUS: AVAILABLE</span>
-          <span>Uptime: 99.9%</span>
-        </div>
-      </div>
-    </footer>
-  } @placeholder {
-    <div class="h-screen w-full flex items-center justify-center bg-[#050510]">
-      <span class="text-[#00C2FF] animate-pulse font-mono">LOADING SYSTEM...</span>
     </div>
-  }
+  </section>
+
+  <footer
+    class="relative mt-20 border-t border-[#00C2FF]/20 bg-[#020205] overflow-hidden"
+    id="hire-section"
+  >
+    <div
+      class="absolute bottom-0 left-0 w-full h-[200px] bg-gradient-to-t from-[#00C2FF]/10 to-transparent pointer-events-none"
+    ></div>
+    <div
+      class="absolute -bottom-[100px] left-1/2 -translate-x-1/2 w-[60%] h-[200px] bg-[#00C2FF] blur-[100px] opacity-20"
+    ></div>
+
+    <div class="container mx-auto px-4 py-16 relative z-10 flex flex-col items-center text-center">
+      <h2 class="sr-only">
+        Hire Senior .NET 10 Software Architect &amp; Angular 22 Full Stack Engineer on Upwork
+      </h2>
+
+      <div class="text-3xl md:text-5xl font-bold text-white mb-8" aria-hidden="true">
+        Ready to <span class="text-[#00C2FF]">Scale?</span>
+      </div>
+
+      <p class="text-slate-400 max-w-2xl mb-10 leading-relaxed font-sans text-sm sm:text-base">
+        I deliver loosely coupled,
+        <strong>high-performance .NET 10 backend architecture</strong> and zoneless
+        <strong>Angular 22 SSR web applications</strong> engineered for complex enterprise
+        requirements. Let's discuss your next mission-critical breakthrough.
+      </p>
+
+      <a
+        href="https://www.upwork.com/freelancers/~0170d57a30eaf6251c?mp_source=share"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="px-10 py-5 bg-[#00C2FF] text-black font-bold rounded-full text-lg hover:shadow-[0_0_40px_rgba(0,194,255,0.4)] transition-shadow cursor-pointer relative overflow-hidden group"
+      >
+        <span class="relative z-10">Hire Me on Upwork</span>
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-[#00FF94] to-[#00C2FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        ></div>
+      </a>
+
+      <div class="mt-16 text-slate-600 font-mono text-sm flex gap-8">
+        <span>© {{ currentYear() }} Anton.Po</span>
+        <span>STATUS: AVAILABLE FOR CONTRACTS</span>
+        <span>Algorithmic Baseline: O(1)</span>
+      </div>
+    </div>
+  </footer>
 </main>
