@@ -10,6 +10,7 @@ import {
 } from '@angular/core';
 import { CommonModule, NgOptimizedImage, DOCUMENT, isPlatformServer } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
+import { DataGridLayerComponent } from './data-grid-layer.component';
 
 export interface TechItem {
   name: string;
@@ -31,7 +32,7 @@ const PORTFOLIO_SEO_KEY = makeStateKey<boolean>('anton-po-seo-rendered');
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage],
+  imports: [CommonModule, NgOptimizedImage, DataGridLayerComponent],
   templateUrl: './app.component.html',
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
