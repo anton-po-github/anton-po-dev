@@ -1,5 +1,14 @@
-import { Component, signal, ChangeDetectionStrategy, OnInit, inject } from '@angular/core';
-import { CommonModule, NgOptimizedImage, DOCUMENT } from '@angular/common';
+import {
+  Component,
+  signal,
+  ChangeDetectionStrategy,
+  OnInit,
+  inject,
+  TransferState,
+  PLATFORM_ID,
+  makeStateKey,
+} from '@angular/core';
+import { CommonModule, NgOptimizedImage, DOCUMENT, isPlatformServer } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 
 export interface TechItem {
@@ -17,6 +26,8 @@ export interface ExperienceItem {
   url?: string;
 }
 
+const PORTFOLIO_SEO_KEY = makeStateKey<boolean>('anton-po-seo-rendered');
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -29,6 +40,8 @@ export class AppComponent implements OnInit {
   private meta = inject(Meta);
   private titleService = inject(Title);
   private document = inject(DOCUMENT);
+  private transferState = inject(TransferState);
+  private platformId = inject(PLATFORM_ID);
 
   readonly techStack = signal<TechItem[]>([
     { name: 'Angular', iconName: 'ng.svg', group: 'Frontend' },
@@ -73,41 +86,109 @@ export class AppComponent implements OnInit {
   readonly currentYear = signal(new Date().getFullYear());
 
   ngOnInit(): void {
-    const baseUrl = this.document.location.origin;
+    if (this.transferState.get(PORTFOLIO_SEO_KEY, false)) {
+      return;
+    }
 
-    // --- BEST PRACTICE SEO ---
-    this.titleService.setTitle('Anton.Po | Senior Full Stack .NET & Angular Developer');
+    this.initializeSeoMetadata();
+  }
+
+  private initializeSeoMetadata(): void {
+    const title = 'Anton.Po | Senior Full Stack .NET 10 & Angular 22 Architect';
+    const description =
+      'Senior Full Stack Software Architect specializing in extreme-performance Angular 22 SSR, .NET 10 backends, and O(1) algorithmic systems. Hire me on Upwork.';
+
+    const baseUrl = 'https://anton-po.dev/';
+    const ogImageUrl = `${baseUrl}assets/anton-po.webp`;
+
+    this.titleService.setTitle(title);
 
     this.meta.addTags([
-      // Description optimized to ~160 chars for Google SERP
-      {
-        name: 'description',
-        content:
-          'Senior Full Stack Developer specializing in Angular v22, .NET 10, and Azure. I deliver high-performance architecture for complex business needs.',
-      },
-      { name: 'author', content: 'Anton.Po' },
-      { name: 'robots', content: 'index, follow' },
+      { name: 'description', content: description },
+      { name: 'author', content: 'Anton Postelniak' },
+      { name: 'robots', content: 'index, follow, max-image-preview:large' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { charset: 'UTF-8' },
-
-      // Open Graph (Facebook/LinkedIn)
-      { property: 'og:title', content: 'Anton.Po - High-Performance Web Solutions' },
-      {
-        property: 'og:description',
-        content: 'Building the next web with Angular v22 and .NET 10.',
-      },
-      { property: 'og:image', content: `${baseUrl}/assets/anton-po.webp` },
+      { property: 'og:type', content: 'profile' },
       { property: 'og:url', content: baseUrl },
-      { property: 'og:type', content: 'website' },
-
-      // Twitter Card
+      { property: 'og:title', content: title },
+      { property: 'og:description', content: description },
+      { property: 'og:image', content: ogImageUrl },
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: 'Anton.Po | .NET & Angular Architect' },
-      {
-        name: 'twitter:description',
-        content: 'Building the next web with Angular v22 and .NET 10.',
-      },
-      { name: 'twitter:image', content: `${baseUrl}/assets/anton-po.webp` },
+      { name: 'twitter:title', content: title },
+      { name: 'twitter:description', content: description },
+      { name: 'twitter:image', content: ogImageUrl },
     ]);
+
+    this.setCanonicalUrl(baseUrl);
+    this.injectJsonLdSchema(baseUrl, ogImageUrl);
+
+    if (isPlatformServer(this.platformId)) {
+      this.transferState.set(PORTFOLIO_SEO_KEY, true);
+    }
+  }
+
+  private setCanonicalUrl(url: string): void {
+    const head = this.document.head;
+    let element: HTMLLinkElement | null =
+      this.document.querySelector('link[rel="canonical"]') || null;
+
+    if (!element) {
+      element = this.document.createElement('link');
+      element.setAttribute('rel', 'canonical');
+      head.appendChild(element);
+    }
+    element.setAttribute('href', url);
+  }
+
+  private injectJsonLdSchema(url: string, imageUrl: string): void {
+    const schema = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'ProfilePage',
+          '@id': `${url}#webpage`,
+          url: url,
+          name: 'Anton Postelniak Portfolio',
+          description: 'Technical portfolio and contract booking for Anton Postelniak.',
+          mainEntity: { '@id': `${url}#person` },
+        },
+
+        {
+          '@type': 'Person',
+          '@id': `${url}#person`,
+          name: 'Anton Postelniak',
+          alternateName: 'Anton.Po',
+          jobTitle: 'Senior Software Architect & Full Stack Developer',
+          image: imageUrl,
+          url: url,
+          sameAs: [
+            'https://github.com/anton-po-github',
+            'https://www.upwork.com/freelancers/~0170d57a30eaf6251c',
+          ],
+          knowsAbout: [
+            '.NET 10',
+            'Angular 22',
+            'Server-Side Rendering (SSR)',
+            'C#',
+            'Algorithmic Complexity O(1)',
+            'Distributed Cloud Architecture',
+            'PostgreSQL',
+          ],
+        },
+      ],
+    };
+
+    const existingScript: HTMLScriptElement | null = this.document.head.querySelector(
+      'script[type="application/ld+json"]',
+    );
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    const script = this.document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(schema);
+    this.document.head.appendChild(script);
   }
 }
