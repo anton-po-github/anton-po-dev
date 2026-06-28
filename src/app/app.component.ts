@@ -42,12 +42,10 @@ export class AppComponent implements OnInit {
       title: 'Team Lead & Software Architect',
       company: 'Aegitox',
       url: 'https://aegitox.com/',
-      result:
-        // 'Achieved sub 8-18ms inference latency in production, processing high-volume text telemetry with zero-allocation heap overhead.',
-        '',
+      result: '',
       description:
-        'Spearheaded the architecture and full-stack development of an enterprise-grade AI moderation platform. Engineered a zero-latency, hardware-accelerated inference pipeline in .NET 10, enforcing strict $O(1)$ algorithmic complexity. Directed the fine-tuning of specialized NLP models (MiniLM-L6-v2, RoBERTa) for real-time contextual toxicity detection. Architected a resilient edge-routing cloud infrastructure and delivered a Lighthouse-optimized Angular v22 frontend with automated PayPro Global billing integration.',
-      tech: 'AI, .NET 10, Angular v22, ONNX Runtime, Hetzner, Cloudflare',
+        'Spearheaded the full-stack architecture of an enterprise Discord moderation platform. Engineered the NativeIntentEngine in .NET 10—a deterministic, hardware-accelerated inference pipeline executing in strict O(1) time. By stacking dual MiniLM-L6-v2 models using a 32-token head/tail splice, the system detects toxicity and maps intent (Personal, Self, System) in just 2–12 milliseconds. The engine autonomously de-escalates conflicts by injecting target-aware placeholders, backed by a Lighthouse-optimized Angular v22 frontend, Zero Data Retention (ZDR) routing, and PayPro Global billing.',
+      tech: 'AI, C# / .NET 10, Angular v22, Dual MiniLM-L6-v2, ONNX Runtime, OpenRouter (LLaMA-3.1), PayPro Global., Hetzner, Cloudflare',
     },
     {
       title: 'Enterprise CRM Transformation',
@@ -86,11 +84,6 @@ export class AppComponent implements OnInit {
         name: 'description',
         content:
           'Senior Full Stack Developer specializing in Angular v22, .NET 10, and Azure. I deliver high-performance architecture for complex business needs.',
-      },
-      {
-        name: 'keywords',
-        content:
-          'Angular, .NET, Azure, Full Stack Developer, TypeScript, C#, Software Architect, Web Performance',
       },
       { name: 'author', content: 'Anton.Po' },
       { name: 'robots', content: 'index, follow' },
