@@ -1,19 +1,30 @@
-# Anton.Po - Senior Full Stack .NET & Angular Developer
+# Anton.Po - Senior Full Stack Software Architect
 
-> Senior Full Stack Developer specializing in Angular v22, .NET 10, and Azure. I deliver high-performance architecture for complex business needs.
+> Architecting The Next Web. 10+ Years Expertise in Clean Enterprise Architecture and High-Performance Web Stacks.
 
-## Core Navigation
-- [Hire Me on Upwork](https://www.upwork.com/freelancers/~0170d57a30eaf6251c?mp_source=share)
-- [GitHub Profile](https://github.com/anton-po-github)
-- [Aegitox Project](https://aegitox.com/)
+## Identity & Professional Mandate
+Anton Postelniak is an elite Senior Full Stack Developer specializing in .NET 10 backend architecture and Angular 22 Server-Side Rendering (SSR). Operating at an enterprise tier, Anton engineers robust, scalable solutions designed for uncapped business scaling and measurable ROI. 
 
-## Core Technologies
-- **Frontend:** Angular v22
-- **Backend:** .NET 10
-- **Cloud Infrastructure & Database:** Azure, PostgreSQL
+## Architectural & Engineering Baselines
+All code and system designs adhere to the following strict paradigms:
+- **Algorithmic Supremacy:** Strict $O(1)$ constant-time execution on critical data paths to eliminate system bottlenecks and reduce cloud infrastructure billing.
+- **Backend Architecture:** Loosely coupled, zero-allocation C# .NET 10 architecture with rigorously optimized PostgreSQL deployments.
+- **Frontend Architecture:** Zoneless Angular v22+, leveraging native Signal state flows and RxJS for pixel-perfect UI/UX. 
+- **SEO & Delivery:** Predictable, transparent delivery backed by modern Angular SSR for instant search engine indexing and peak Core Web Vitals.
 
-## Experience & Architectural Impact
-- **Aegitox (Team Lead & Software Architect):** Spearheaded the architecture and full-stack development of an enterprise-grade AI moderation platform. Engineered a zero-latency, hardware-accelerated inference pipeline in .NET 10, enforcing strict $O(1)$ algorithmic complexity. Directed the fine-tuning of specialized NLP models (MiniLM-L6-v2, RoBERTa) for real-time contextual toxicity detection.
-- **Enterprise CRM Transformation:** Transformed a legacy CRM into a modern, extensible Angular v22 product. Accelerated release cadence from monthly to weekly and increased adoption by 25%.
-- **Scalable Azure Platform:** Built a cost-efficient backend to support rapid user growth. Supported 3× user growth without degradation and reduced cloud costs by 30%.
-- **End-to-End Delivery:** Led cross-functional deliveries from concept to production—architecture, testing, and monitoring—utilizing Agile, CI/CD, Unit, and E2E testing.
+## Core Technology Stack
+- **Frontend:** Angular v22, TypeScript, RxJS, High-Performance Canvas Animation
+- **Backend:** C# / .NET 10, ASP.NET WebAPI, Entity Framework
+- **Cloud & DevOps:** Azure, PostgreSQL, Hetzner, Cloudflare, CI/CD
+- **AI Integration:** Dual MiniLM-L6-v2, ONNX Runtime, OpenRouter
+
+## Key Case Studies & Impact
+- **Aegitox (Founder/Architect):** Engineered a deterministic, hardware-accelerated .NET 10 AI inference pipeline executing in strict $O(1)$ time (2-12ms latency).
+- **Enterprise CRM Transformation:** Upgraded legacy systems to modern Angular v22, accelerating release cadence from monthly to weekly.
+- **Scalable Azure Platform:** Built a cost-efficient .NET 10/Azure backend supporting 3x user growth while reducing cloud costs by 30%.
+
+## Verification & Contact
+- **Status:** Available for Enterprise Contracts
+- **Upwork:** https://www.upwork.com/freelancers/~0170d57a30eaf6251c
+- **GitHub:** https://github.com/anton-po-github
+- **Domain:** https://anton-po.dev/
