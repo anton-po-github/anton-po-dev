@@ -40,7 +40,9 @@ class DataPacket {
     const dx = target.x - start.x;
     const dy = target.y - start.y;
     const distance = Math.sqrt(dx * dx + dy * dy);
-    this.speed = 3.0 / Math.max(distance, 1); // 3.0 logical pixels per frame
+
+    // REDUCE from 3.0 to 1.0 logical pixels per frame
+    this.speed = 1.0 / Math.max(distance, 1);
   }
 
   deactivate(): void {
@@ -243,7 +245,8 @@ export class DataGridLayerComponent implements OnDestroy {
 
     // 1. Draw Architectural Edges (executed ONLY on resize, O(N))
     ctx.lineWidth = 1;
-    ctx.strokeStyle = 'rgba(0, 194, 255, 0.05)'; // Deep Corporate Azure, ultra-low opacity
+    // INCREASE opacity from 0.05 to 0.15
+    ctx.strokeStyle = 'rgba(0, 194, 255, 0.15)';
     ctx.beginPath();
 
     for (let i = 0; i < this.nodes.length; i++) {
@@ -260,11 +263,13 @@ export class DataGridLayerComponent implements OnDestroy {
     ctx.stroke();
 
     // 2. Draw Server Nodes
-    ctx.fillStyle = 'rgba(0, 194, 255, 0.15)'; // Faint glowing memory blocks
+    // INCREASE opacity from 0.15 to 0.4
+    ctx.fillStyle = 'rgba(0, 194, 255, 0.4)';
     for (let i = 0; i < this.nodes.length; i++) {
       const node = this.nodes[i];
       ctx.beginPath();
-      ctx.arc(node.x, node.y, 1.5, 0, Math.PI * 2);
+      // INCREASE node radius from 1.5 to 2.0
+      ctx.arc(node.x, node.y, 2.0, 0, Math.PI * 2);
       ctx.fill();
     }
   }
@@ -294,8 +299,8 @@ export class DataGridLayerComponent implements OnDestroy {
       const currentX = packet.startX + (packet.targetX - packet.startX) * packet.progress;
       const currentY = packet.startY + (packet.targetY - packet.startY) * packet.progress;
 
-      // Tail calculation (trailing 15% behind the head)
-      const tailProgress = Math.max(0, packet.progress - 0.15);
+      // INCREASE tail offset from 0.15 (15%) to 0.35 (35%)
+      const tailProgress = Math.max(0, packet.progress - 0.35);
       const tailX = packet.startX + (packet.targetX - packet.startX) * tailProgress;
       const tailY = packet.startY + (packet.targetY - packet.startY) * tailProgress;
 
