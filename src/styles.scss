@@ -55,14 +55,36 @@ body {
 /* SCROLLBAR 
 */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
+  height: 4px;
+  background-color: transparent;
 }
+
 ::-webkit-scrollbar-track {
-  background: #050510;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #00c2ff;
-  border-radius: 3px;
+  border-radius: 6px;
+  background-color: #fff;
+  background-image: -webkit-gradient(
+    linear,
+    40% 0%,
+    75% 84%,
+    from(#00c2ff),
+    to(#bd00ff),
+    color-stop(0.7, #cb36ff)
+  );
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
 /* PERFORMANCE: Content Visibility

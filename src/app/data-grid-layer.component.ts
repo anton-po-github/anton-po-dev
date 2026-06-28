@@ -82,8 +82,10 @@ export class DataGridLayerComponent implements OnDestroy {
 
   // Pre-allocated Data Structures
   private readonly POOL_SIZE = 50;
-  private readonly NODE_COUNT = 150;
-  private readonly CONNECTION_DISTANCE = 180;
+
+  // REMOVE readonly constraints to allow viewport scaling
+  private currentNodeCount = 150;
+  private currentConnectionDistance = 180;
 
   private nodes: GridNode[] = [];
   private edges = new Map<number, number[]>(); // Adjacency List: NodeID -> TargetNodeIDs[]
@@ -183,8 +185,14 @@ export class DataGridLayerComponent implements OnDestroy {
     this.nodes = [];
     this.edges.clear();
 
+    // DYNAMIC SCALING: Prevent clustering by scaling node density to viewport volume
+    const isMobile = this.logicalWidth < 768;
+    this.currentNodeCount = isMobile ? 55 : 150;
+    this.currentConnectionDistance = isMobile ? 110 : 180;
+
     // 1. Generate Static Nodes
-    for (let i = 0; i < this.NODE_COUNT; i++) {
+    // UPDATE to use the new dynamic this.currentNodeCount
+    for (let i = 0; i < this.currentNodeCount; i++) {
       this.nodes.push({
         id: i,
         x: Math.random() * this.logicalWidth,
@@ -205,7 +213,8 @@ export class DataGridLayerComponent implements OnDestroy {
         const dx = nodeA.x - nodeB.x;
         const dy = nodeA.y - nodeB.y;
 
-        if (dx * dx + dy * dy < this.CONNECTION_DISTANCE * this.CONNECTION_DISTANCE) {
+        // UPDATE to use the new dynamic this.currentConnectionDistance
+        if (dx * dx + dy * dy < this.currentConnectionDistance * this.currentConnectionDistance) {
           connections.push(nodeB.id);
         }
       }
