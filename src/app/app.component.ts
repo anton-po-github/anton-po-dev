@@ -70,13 +70,13 @@ export class AppComponent implements OnInit {
         'Architected and engineered a dedicated educational operating system that transforms YouTube into a distraction-free learning workspace. Developed a high-performance .NET 10 backend with hybrid batching workers for metadata ingestion, paired with a zoneless Angular v22 SSR client. Engineered a strict O(1) constant-time semantic knowledge search pipeline that tokenizes transcript data into high-speed memory structures, enabling instant cross-video concept retrieval without timeline scrubbing. The platform neutralizes algorithmic rabbit holes and provides interactive execution workspaces for advanced technical upskilling.',
       tech: 'C# / .NET 10, Angular v22, YouTube Data API v3, SSR, O(1) Memory Indexing, TypeScript, Tailwind CSS',
     },
-    {
+    /*   {
       title: 'Scalable Azure Platform',
       description:
         'Built a cost-efficient backend to support rapid user growth. Partnered with product and ops to align costs with roadmap goals.',
       result: 'Supported 3× user growth without degradation. Reduced cloud costs by 30%.',
       tech: '.NET 10, Azure Functions, PostgreSQL, Storage Blobs',
-    },
+    }, */
     {
       title: 'End-to-End Delivery',
       description:
