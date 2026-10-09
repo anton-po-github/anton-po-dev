@@ -26,5 +26,6 @@ All code and system designs adhere to the following strict paradigms:
 ## Verification & Contact
 - **Status:** Available for Enterprise Contracts
 - **Upwork:** https://www.upwork.com/freelancers/~0170d57a30eaf6251c
+- **Linkedin:** https://www.linkedin.com/in/antonpo
 - **GitHub:** https://github.com/anton-po-github
 - **Domain:** https://anton-po.dev/
