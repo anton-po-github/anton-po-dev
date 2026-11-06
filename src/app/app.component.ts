@@ -25,6 +25,7 @@ export interface ExperienceItem {
   result: string;
   tech: string;
   url?: string;
+  repoUrl?: string;
 }
 
 const PORTFOLIO_SEO_KEY = makeStateKey<boolean>('anton-po-seo-rendered');
@@ -47,6 +48,7 @@ export class AppComponent implements OnInit {
   readonly techStack = signal<TechItem[]>([
     { name: 'Angular', iconName: 'ng.svg', group: 'Frontend' },
     { name: '.NET', iconName: 'dotnet.svg', group: 'Backend' },
+    { name: 'Flutter', iconName: 'flutter.svg', group: 'Mobile' },
     { name: 'Azure', iconName: 'azure.svg', group: 'Cloud' },
     { name: 'PostgreSQL', iconName: 'pgsql.svg', group: 'DB' },
   ]);
@@ -56,6 +58,7 @@ export class AppComponent implements OnInit {
       title: 'Team Lead & Software Architect',
       company: 'Aegitox',
       url: 'https://aegitox.com/',
+      repoUrl: 'https://github.com/aegitox/aegitox',
       result: '',
       description:
         'Spearheaded the full-stack architecture of an enterprise Discord moderation platform. Engineered the NativeIntentEngine in .NET 10—a deterministic, hardware-accelerated inference pipeline executing in strict O(1) time. By stacking dual MiniLM-L6-v2 models using a 32-token head/tail splice, the system detects toxicity and maps intent (Personal, Self, System) in just 2–12 milliseconds. The engine autonomously de-escalates conflicts by injecting target-aware placeholders, backed by a Lighthouse-optimized Angular v22 frontend, Zero Data Retention (ZDR) routing, and PayPro Global billing.',
@@ -65,10 +68,22 @@ export class AppComponent implements OnInit {
       title: 'Lead Architect & Full Stack Engineer',
       company: 'DeepVide',
       url: 'https://deepvide.com/',
+      repoUrl: 'https://github.com/DeepVide/deepvide',
       result: '',
       description:
         'Architected and engineered a dedicated educational operating system that transforms YouTube into a distraction-free learning workspace. Developed a high-performance .NET 10 backend with hybrid batching workers for metadata ingestion, paired with a zoneless Angular v22 SSR client. Engineered a strict O(1) constant-time semantic knowledge search pipeline that tokenizes transcript data into high-speed memory structures, enabling instant cross-video concept retrieval without timeline scrubbing. The platform neutralizes algorithmic rabbit holes and provides interactive execution workspaces for advanced technical upskilling.',
       tech: 'C# / .NET 10, Angular v22, YouTube Data API v3, SSR, O(1) Memory Indexing, TypeScript, Tailwind CSS',
+    },
+
+    {
+      title: 'Flutter Developer & Architect',
+      company: 'ApplyTrack',
+      url: 'https://applytrackflutter.web.app/',
+      repoUrl: 'https://github.com/anton-po-github/ApplyTrack',
+      result: '',
+      description:
+        'Designed and built ApplyTrack, a job proposal tracker, as one Flutter codebase for Web, Android, and iOS. Users sign up with email or Google, then add, edit, search, and delete proposals through a Draft → Sent → Viewed → Interview → Won/Lost flow, with follow-up dates and a win-rate stats screen. The app uses feature-based clean architecture with Riverpod state, go_router auth guards, and a Dio API client, and it is covered by 50+ unit and widget test files. The .NET 10 Web API runs on Azure App Service with PostgreSQL on Supabase, and the web build is hosted on Firebase Hosting. The API validates every field on the server, checks row ownership, and soft-deletes data. Lists use cursor paging, and stats come from a single summary row.',
+      tech: 'Flutter, Dart, Riverpod, go_router, Dio, C# / .NET 10, ASP.NET Web API, PostgreSQL, Supabase, Azure, Firebase Hosting',
     },
 
     {
