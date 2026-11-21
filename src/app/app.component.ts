@@ -9,7 +9,7 @@ import {
   makeStateKey,
 } from '@angular/core';
 import { CommonModule, NgOptimizedImage, DOCUMENT, isPlatformServer } from '@angular/common';
-import { Meta, Title } from '@angular/platform-browser';
+import { DomSanitizer, Meta, SafeResourceUrl, Title } from '@angular/platform-browser';
 import { DataGridLayerComponent } from './data-grid-layer.component';
 
 export interface TechItem {
@@ -44,6 +44,15 @@ export class AppComponent implements OnInit {
   private document = inject(DOCUMENT);
   private transferState = inject(TransferState);
   private platformId = inject(PLATFORM_ID);
+
+  readonly currentYear = signal(new Date().getFullYear());
+
+  private readonly sanitizer = inject(DomSanitizer);
+
+  readonly videoPlaying = signal(false);
+  readonly videoUrl: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+    'https://www.youtube-nocookie.com/embed/qKvwIkXz46k?autoplay=1&rel=0',
+  );
 
   readonly techStack = signal<TechItem[]>([
     { name: 'Angular', iconName: 'ng.svg', group: 'Frontend' },
@@ -107,8 +116,6 @@ export class AppComponent implements OnInit {
       tech: 'C# / .NET 10, ASP.NET Web API, EF Core 10, Npgsql, PostgreSQL, Angular 22, Angular Material 3, Tailwind CSS, Redis, Azure, Firebase',
     },
   ]);
-
-  readonly currentYear = signal(new Date().getFullYear());
 
   ngOnInit(): void {
     if (this.transferState.get(PORTFOLIO_SEO_KEY, false)) {
