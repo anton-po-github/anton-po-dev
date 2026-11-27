@@ -191,7 +191,7 @@ export class AppComponent implements OnInit {
           '@id': `${url}#person`,
           name: 'Anton Postelniak',
           alternateName: 'Anton.Po',
-          jobTitle: 'Senior Software Architect, Full Stack & Flutter Mobile Developer',
+          jobTitle: 'Senior Software Architect & Full Stack Developer',
           image: imageUrl,
           url: url,
           sameAs: [
