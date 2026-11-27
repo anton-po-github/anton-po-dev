@@ -1,25 +1,28 @@
-# Anton.Po - Senior Full Stack Software Architect
+# Anton.Po - Senior Full Stack & Flutter Mobile Software Architect
 
-> Architecting The Next Web. 10+ Years Expertise in Clean Enterprise Architecture and High-Performance Web Stacks.
+> Architecting The Next Web. 10+ Years Expertise in Clean Enterprise Architecture and High-Performance Web & Mobile Stacks.
 
 ## Identity & Professional Mandate
-Anton Postelniak is an elite Senior Full Stack Developer specializing in .NET 10 backend architecture and Angular 22 Server-Side Rendering (SSR). Operating at an enterprise tier, Anton engineers robust, scalable solutions designed for uncapped business scaling and measurable ROI.
+Anton Postelniak is an elite Senior Full Stack Developer specializing in .NET 10 backend architecture, Angular 22 Server-Side Rendering (SSR), and Flutter mobile development for Android and iOS. Operating at an enterprise tier, Anton engineers robust, scalable solutions designed for uncapped business scaling and measurable ROI.
 
 ## Architectural & Engineering Baselines
 All code and system designs adhere to the following strict paradigms:
 - **Algorithmic Supremacy:** Strict $O(1)$ constant-time execution on critical data paths to eliminate system bottlenecks and reduce cloud infrastructure billing.
 - **Backend Architecture:** Loosely coupled, zero-allocation C# .NET 10 architecture with rigorously optimized PostgreSQL deployments.
 - **Frontend Architecture:** Zoneless Angular v22+, leveraging native Signal state flows and RxJS for pixel-perfect UI/UX.
+- **Mobile Architecture:** Cross-platform Flutter and Dart apps (Android, iOS, Web) with feature-based clean architecture, Riverpod state, and secure .NET 10 APIs.
 - **SEO & Delivery:** Predictable, transparent delivery backed by modern Angular SSR for instant search engine indexing and peak Core Web Vitals.
 
 ## Core Technology Stack
 - **Frontend:** Angular v22, TypeScript, RxJS, High-Performance Canvas Animation
+- **Mobile:** Flutter, Dart, Riverpod, go_router, Dio
 - **Backend:** C# / .NET 10, ASP.NET WebAPI, Entity Framework
 - **Cloud & DevOps:** Azure, PostgreSQL, Hetzner, Cloudflare, CI/CD
 - **AI Integration:** Dual MiniLM-L6-v2, ONNX Runtime, OpenRouter
 
 ## Key Case Studies & Impact
 - **[Aegitox](https://aegitox.com/) (Founder/Architect):** Engineered a deterministic, hardware-accelerated .NET 10 AI inference pipeline executing in strict $O(1)$ time (2-12ms latency).
+- **[ApplyTrack](https://applytrackflutter.web.app/) (Flutter Developer/Architect):** Built one Flutter codebase for Web, Android, and iOS with a .NET 10 API, server-side validation, and 600+ unit and widget test files.
 - **Enterprise CRM Transformation:** Upgraded legacy systems to modern Angular v22, accelerating release cadence from monthly to weekly.
 - **Scalable Azure Platform:** Built a cost-efficient .NET 10/Azure backend supporting 3x user growth while reducing cloud costs by 30%.
 

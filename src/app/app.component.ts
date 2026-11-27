@@ -126,9 +126,9 @@ export class AppComponent implements OnInit {
   }
 
   private initializeSeoMetadata(): void {
-    const title = 'Anton.Po | Senior Full Stack .NET 10 & Angular 22 Architect';
+    const title = 'Anton.Po | Senior Full Stack .NET 10, Angular 22 & Flutter Architect';
     const description =
-      'Senior Full Stack Software Architect specializing in extreme-performance Angular 22 SSR, .NET 10 backends, and O(1) algorithmic systems. Hire me on Upwork.';
+      'Senior Full Stack Software Architect specializing in extreme-performance Angular 22 SSR, .NET 10 backends, Flutter mobile development, and O(1) algorithmic systems. Hire me on Upwork.';
 
     const baseUrl = 'https://anton-po.dev/';
     const ogImageUrl = `${baseUrl}assets/anton-po.webp`;
@@ -191,7 +191,7 @@ export class AppComponent implements OnInit {
           '@id': `${url}#person`,
           name: 'Anton Postelniak',
           alternateName: 'Anton.Po',
-          jobTitle: 'Senior Software Architect & Full Stack Developer',
+          jobTitle: 'Senior Software Architect, Full Stack & Flutter Mobile Developer',
           image: imageUrl,
           url: url,
           sameAs: [
@@ -201,6 +201,9 @@ export class AppComponent implements OnInit {
           knowsAbout: [
             '.NET 10',
             'Angular 22',
+            'Flutter',
+            'Dart',
+            'Mobile App Development (Android & iOS)',
             'Server-Side Rendering (SSR)',
             'C#',
             'Algorithmic Complexity O(1)',
